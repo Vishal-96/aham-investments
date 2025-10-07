@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact — Aham Investments</title>
+    <link rel="icon" type="image/png" href="public/assets/favicon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="public/css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm"
+    >
+      <div class="container">
+        <a
+          class="navbar-brand d-flex align-items-center fw-bold text-warning"
+          href="index.html"
+        >
+          <img
+            src="public/assets/logo.webp"
+            alt="Aham Investments Logo"
+            width="40"
+            height="40"
+            class="me-2"
+          />
+          Aham Investments
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto text-uppercase fw-semibold">
+            <li class="nav-item">
+              <a class="nav-link px-3" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="index.html#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="index.html#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3 active" href="#contact">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-warning fw-bold ms-lg-3" href="#">Workmate</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End-->
+
+    <!-- Page headline -->
+    <header class="py-5 text-center">
+      <div class="container">
+        <h1 class="display-6 fw-bold">Contact Aham Investments</h1>
+        <p class="text-muted mb-0">
+          Reach out to us in style — wherever you are, we're just a click away!
+        </p>
+      </div>
+    </header>
+
+    <!-- Contact split -->
+    <main class="container contact-split">
+      <div class="row g-0">
+        <!-- LEFT: Form -->
+        <div class="col-md-6 contact-left p-4 p-md-5">
+          <h3 class="fw-bold mb-2">Send us a message</h3>
+          <p class="small-note mb-4">
+            We typically reply within 24–48 hours. For urgent matters, call or
+            WhatsApp.
+          </p>
+
+          <form id="contactFormPage" novalidate>
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="c_name" class="form-label small">Full name</label>
+                <input
+                  id="c_name"
+                  name="name"
+                  type="text"
+                  class="form-control input-focus"
+                  placeholder="Your full name"
+                  required
+                />
+                <div class="invalid-feedback">Please enter your name.</div>
+              </div>
+
+              <div class="col-12">
+                <label for="c_address" class="form-label small">Address</label>
+                <input
+                  id="c_address"
+                  name="address"
+                  type="text"
+                  class="form-control"
+                  placeholder="Company / Street / City"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="c_phone" class="form-label small"
+                  >Contact number</label
+                >
+                <input
+                  id="c_phone"
+                  name="phone"
+                  type="tel"
+                  class="form-control input-focus"
+                  placeholder="+255 7XX XXX XXX"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Please enter a phone number we can reach.
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="c_email" class="form-label small">Email</label>
+                <input
+                  id="c_email"
+                  name="email"
+                  type="email"
+                  class="form-control input-focus"
+                  placeholder="you@company.com"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Please enter a valid email address.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="c_message" class="form-label small"
+                  >Your message / Query</label
+                >
+                <textarea
+                  id="c_message"
+                  name="message"
+                  class="form-control"
+                  rows="5"
+                  placeholder="How can we help?"
+                  required
+                ></textarea>
+                <div class="invalid-feedback">
+                  Please write a short message.
+                </div>
+              </div>
+
+              <div class="col-12 d-flex align-items-center gap-3">
+                <button
+                  id="contactSubmit"
+                  type="submit"
+                  class="btn btn-send fw-bold px-4"
+                >
+                  Send Message
+                </button>
+                <button type="reset" class="btn btn-outline-secondary">
+                  Reset
+                </button>
+                <div
+                  id="contactSpinner"
+                  class="spinner-border spinner-border-sm text-warning d-none"
+                  role="status"
+                  aria-hidden="true"
+                ></div>
+              </div>
+
+              <div class="col-12">
+                <div
+                  id="contactAlert"
+                  class="alert d-none mt-3"
+                  role="alert"
+                  aria-live="polite"
+                ></div>
+              </div>
+            </div>
+          </form>
+
+          <hr class="my-4" />
+          <p class="small text-muted mb-0">
+            Prefer offline copies?
+            <a
+              href="public/assets/aham_investments_company_profile_2025.pdf"
+              class="text-decoration-none"
+              target="_blank"
+              >Download our brochure</a
+            >.
+          </p>
+        </div>
+
+        <!-- RIGHT: Company details (hidden on small screens) -->
+        <aside class="col-md-6 contact-right p-4 p-md-5 d-none d-md-block">
+          <div class="mb-4 d-flex align-items-center">
+            <img
+              src="public/assets/logo.webp"
+              alt="Aham Investments"
+              class="logo me-3"
+            />
+            <div>
+              <h5 class="mb-0">Aham Investments</h5>
+              <small class="text-muted">"Genuine quality is our Merit"</small>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="text-warning small mb-2">Head Office</h6>
+            <p class="small mb-0">
+              Mhumbu Industrial Area,<br />Shinyanga, Tanzania
+            </p>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="text-warning small mb-2">Contact</h6>
+            <p class="small mb-1 contact-item">
+              <i class="fas fa-phone-alt me-2 text-warning"></i>
+              <a href="tel:+255767100009" class="text-light"
+                >+255 767 100 009</a
+              >
+              <span class="text-muted"> / </span>
+              <a href="tel:+255745100009" class="text-light"
+                >+255 745 100 009</a
+              >
+            </p>
+            <p class="small mb-1 contact-item">
+              <i class="fas fa-envelope me-2 text-warning"></i>
+              <a href="mailto:ahamcotton@gmail.com" class="text-light"
+                >ahamcotton@gmail.com</a
+              >
+            </p>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="text-warning small mb-2">Business enquiries</h6>
+            <p class="small mb-1">
+              Sales:
+              <a href="mailto:ameir@myself.com" class="text-light"
+                >ameir@myself.com</a
+              >
+            </p>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="text-warning small mb-2">Follow us</h6>
+            <div class="socials mb-2">
+              <a
+                href="https://www.instagram.com/p/DKMUMqZi8qt/?igsh=NjkydXp0anUzazJ2MzY="
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://api.whatsapp.com/send?phone=+255767100009"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a href="mailto:ahamcotton@gmail.com" aria-label="Email"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+            <p class="small text-light mb-0">
+              For urgent requests use WhatsApp or phone at any time.
+            </p>
+          </div>
+
+          <div class="mt-4">
+            <a
+              href="https://api.whatsapp.com/send?phone=+255767100009"
+              target="_blank"
+              class="btn btn-outline-light"
+              ><i class="fab fa-whatsapp me-2"></i>Let's Chat</a
+            >
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer mt-5 text-light">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-md-4">
+            <div class="d-flex align-items-center mb-3">
+              <img
+                src="public/assets/logo.webp"
+                alt="Aham Investments Logo"
+                width="45"
+                height="45"
+                class="me-2"
+              />
+              <h5 class="fw-bold text-warning mb-0">Aham Investments</h5>
+            </div>
+            <p class="fst-italic mb-3">"Genuine quality is our Merit"</p>
+            <p class="small mb-1">
+              <i class="fas fa-map-marker-alt me-2 text-warning"></i> Mhumbu
+              Industrial Area, Shinyanga
+            </p>
+            <p class="small mb-1">
+              <i class="fas fa-envelope me-2 text-warning"></i>
+              ahamcotton@gmail.com
+            </p>
+            <p class="small mb-3">
+              <i class="fas fa-phone-alt me-2 text-warning"></i> +255 767 100
+              009
+            </p>
+            <a href="#" class="btn btn-warning fw-bold btn-sm">Contact Us</a>
+          </div>
+
+          <div class="col-md-5">
+            <h6 class="text-uppercase text-warning fw-bold mb-3">
+              Quick Links
+            </h6>
+            <div class="row">
+              <div class="col-6">
+                <ul class="list-unstyled small">
+                  <li><a href="#contact" class="footer-link">Contact Us</a></li>
+                  <li>
+                    <a href="index.html#about" class="footer-link">About Us</a>
+                  </li>
+                  <li>
+                    <a href="index.html#services" class="footer-link"
+                      >Cotton Processing</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="footer-link">Transportation Service</a>
+                  </li>
+                  <li>
+                    <a href="#" class="footer-link">Aham Constructions</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul class="list-unstyled small">
+                  <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                  <li><a href="#" class="footer-link">Terms of Use</a></li>
+                  <li><a href="#" class="footer-link">Cookie Policy</a></li>
+                  <li>
+                    <a href="#" class="footer-link text-warning fw-bold"
+                      >Workmate <i class="fas fa-briefcase ms-1"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <h6 class="text-uppercase text-warning fw-bold mb-3">
+              Connect With Us
+            </h6>
+            <div class="d-flex gap-3 mb-3">
+              <a
+                href="https://www.instagram.com/p/DKMUMqZi8qt/?igsh=NjkydXp0anUzazJ2MzY="
+                class="socials"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://api.whatsapp.com/send?phone=+255767100009"
+                class="socials"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a href="mailto:ahamcotton@gmail.com" class="socials"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+            <p class="small text-secondary">
+              Stay connected for updates on our latest projects and initiatives.
+            </p>
+          </div>
+        </div>
+
+        <hr class="border-secondary my-4" />
+        <div class="text-center small text-secondary pb-3">
+          &copy; <span id="year"></span> Aham Investments. All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Section End-->
+
+    <!-- Bootstrap + main JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="public/js/main.js"></script>
+  </body>
+</html>

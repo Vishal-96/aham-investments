@@ -1,0 +1,397 @@
+:root {
+  --brand-yellow: #ffc107;
+  --dark-bg: #0d0d0d;
+  --muted: #6c757d;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: #f8f9fa;
+}
+
+.navbar-brand img {
+  border-radius: 6px;
+}
+
+.navbar .btn-warning {
+  background-color: var(--brand-yellow);
+  color: #000;
+  border: none;
+}
+
+/* landing page -start */
+.hero-section {
+  background: #111;
+  position: relative;
+}
+
+.carousel-inner img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.hero-section h1 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.hero-overlay p {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  color: #fcfcfc;
+  font-weight: bold;
+}
+.hero-overlay h1 {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+@media (max-width: 767.98px) {
+  .carousel-inner img {
+    height: 350px;
+  }
+}
+
+.service-card {
+  position: relative;
+  height: 300px;
+}
+.service-card img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  filter: brightness(0.8);
+  transition: all 0.4s ease;
+}
+.service-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.service-card .hover-info {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.service-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.6);
+}
+.service-card:hover .hover-info {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    height: auto;
+  }
+  .service-card img {
+    height: 250px;
+  }
+  .hover-info {
+    display: none;
+  }
+}
+
+/*video section styling */
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.video-section video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .video-section {
+    height: 50vh;
+  }
+  .video-overlay h2 {
+    font-size: 1.4rem;
+  }
+  .video-overlay p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Fade-in animation */
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#why-us .card {
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#why-us .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#why-us .card i {
+  font-size: 2rem;
+}
+
+#why-us h5 {
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+
+#why-us p {
+  font-size: 0.95rem;
+}
+
+#clients {
+  background-color: #f8f9fa;
+}
+
+.client-card {
+  transition: transform 0.3s ease;
+}
+
+.client-logo {
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: all 0.4s ease;
+  max-height: 70px;
+}
+
+.client-card:hover .client-logo {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.client-card:hover {
+  transform: translateY(-4px);
+}
+
+#clients h6 {
+  font-size: 0.95rem;
+}
+
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Global Reach Section */
+#global-reach {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.global-bg {
+  background-image: url("../assets/global_reach.png");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4);
+  z-index: 1;
+}
+
+#global-reach .container {
+  z-index: 2;
+  position: relative;
+}
+
+#global-reach h2 {
+  font-size: 2.2rem;
+}
+
+#global-reach p {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  color: #ddd;
+}
+
+/* Modal Styling */
+#globalMapModal .modal-content {
+  background-color: #0f0f0f;
+  border-radius: 10px;
+}
+
+.map-container {
+  max-height: 80vh;
+  cursor: grab;
+}
+
+.map-image {
+  transition: transform 0.25s ease;
+}
+
+/* Simple Zoom effect for desktop */
+.map-container.zoomed {
+  cursor: move;
+}
+
+.footer {
+  background-color: #0d0d0d;
+  font-size: 0.95rem;
+}
+
+.footer-link {
+  color: #ccc;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #ffc107;
+}
+
+.social-link {
+  font-size: 1.3rem;
+  color: #ccc;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-link:hover {
+  color: #ffc107;
+  transform: scale(1.1);
+}
+
+.footer hr {
+  opacity: 0.2;
+}
+
+.footer .btn-warning {
+  background-color: #ffc107;
+  border: none;
+  color: #000;
+}
+
+.footer .btn-warning:hover {
+  background-color: #ffca2c;
+}
+
+/* landing page -end */
+
+/* contact_us page */
+.contact-split {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(13, 13, 13, 0.08);
+}
+
+.contact-left {
+  background: #fff;
+}
+
+.contact-right {
+  background: linear-gradient(180deg, #0b0b0b 0%, #111 100%);
+  color: #e9eef2;
+}
+
+/* Form */
+.form-label.small {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.btn-send {
+  background: var(--brand-yellow);
+  color: #000;
+  border: none;
+}
+
+/* Contact details column */
+.contact-right .logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.contact-right h5 {
+  color: var(--brand-yellow);
+  font-weight: 700;
+}
+.contact-right p.small {
+  color: #cfd7db;
+}
+
+.contact-right .contact-item {
+  margin-bottom: 0.65rem;
+}
+
+.contact-right a.text-light {
+  text-decoration: none;
+  color: #f3f6f7;
+}
+.contact-right a.text-light:hover {
+  color: var(--brand-yellow);
+}
+
+.socials a {
+  color: #d0d7da;
+  font-size: 1.15rem;
+  margin-right: 0.6rem;
+}
+.socials a:hover {
+  color: var(--brand-yellow);
+  transform: translateY(-3px);
+}
+
+/* Responsive: hide right column on small devices */
+@media (max-width: 991.98px) {
+  .contact-right {
+    display: none;
+  }
+}
+
+/* Small fancy touches */
+.contact-left .small-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.input-focus:focus {
+  box-shadow: 0 0 0 0.12rem rgba(255, 193, 7, 0.18);
+  border-color: var(--brand-yellow);
+}
+/* contact_us page -end */
