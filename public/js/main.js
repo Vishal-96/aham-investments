@@ -1,3 +1,32 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const hasContentLoaded = sessionStorage.getItem("hasContentLoaded");
+  if (hasContentLoaded) {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("navbar").style.display = "block";
+  } else {
+    setTimeout(function () {
+      if (document.getElementById("loader")) {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("navbar").style.display = "block";
+        sessionStorage.setItem("hasContentLoaded", true);
+      }
+    }, 5000);
+  }
+});
+
+let progressBar = document.getElementById("progress-bar");
+let width = 0;
+
+function updateProgressBar() {
+  if (progressBar && width < 100) {
+    width += 10;
+    progressBar.style.width = width + "%";
+    setTimeout(updateProgressBar, 500);
+  }
+}
+
+updateProgressBar();
+
 const faders = document.querySelectorAll(".fade-in-element");
 const appearOptions = {
   threshold: 0.4,
