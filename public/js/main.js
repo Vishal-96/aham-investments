@@ -1,5 +1,4 @@
 const faders = document.querySelectorAll(".fade-in-element");
-
 const appearOptions = {
   threshold: 0.4,
   rootMargin: "0px 0px -50px 0px",
@@ -54,7 +53,6 @@ window.addEventListener("mousemove", (e) => {
   mapImage.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
 });
 
-// Reset map when modal closes
 const globalModal = document.getElementById("globalMapModal");
 globalModal?.addEventListener("hidden.bs.modal", () => {
   scale = 1;
@@ -65,7 +63,6 @@ globalModal?.addEventListener("hidden.bs.modal", () => {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Navbar color changes only after hero section is completely out of view
 const navbar = document.querySelector(".navbar");
 const heroSection = document.querySelector(".hero-section");
 
@@ -74,17 +71,15 @@ if (navbar && heroSection) {
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) {
-          // Hero section is out of view → make navbar dark
           navbar.classList.add("bg-dark", "navbar-dark");
           navbar.classList.remove("bg-transparent", "navbar-light");
         } else {
-          // Hero section is visible → keep transparent navbar
           navbar.classList.add("bg-transparent", "navbar-light");
           navbar.classList.remove("bg-dark", "navbar-dark");
         }
       });
     },
-    { threshold: 0 } // triggers when hero fully leaves viewport
+    { threshold: 0 }
   );
 
   observer.observe(heroSection);

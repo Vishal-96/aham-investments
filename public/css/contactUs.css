@@ -1,33 +1,100 @@
-/* contact_us page */
+/* =========================================
+   🌍 Contact Us Page Styles
+========================================= */
+
+/* ---------- Hero Header Section ---------- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("../assets/aham_investment_co_ltd_image_48.webp") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(4, 57, 39, 0.7) 0%,
+    rgba(6, 70, 53, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+.hero-section .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+  animation: fadeInOverlay 1.8s ease-in-out;
+}
+
+.hero-section h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+}
+
+.hero-section p {
+  color: var(--color-text-light-muted);
+  font-size: 1.1rem;
+  margin-top: 0.75rem;
+}
+
+/* ---------- Contact Split Layout ---------- */
 .contact-split {
   max-width: 1100px;
-  margin: 2.5rem auto;
+  margin: 3rem auto;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(13, 13, 13, 0.08);
+  box-shadow: 0 8px 30px rgba(6, 70, 53, 0.1);
 }
 
 .contact-left {
-  background: #fff;
+  background: var(--color-bg-card-light);
+  color: var(--color-text-dark);
 }
 
 .contact-right {
-  background: linear-gradient(180deg, #0b0b0b 0%, #111 100%);
-  color: #e9eef2;
+  background: linear-gradient(
+    180deg,
+    var(--color-brand-dark) 0%,
+    var(--color-brand-dark-alt) 100%
+  );
+  color: var(--color-text-light);
 }
 
-/* Form */
+/* ---------- Form Styles ---------- */
 .form-label.small {
   font-weight: 600;
   font-size: 0.85rem;
 }
-.btn-send {
-  background: var(--color-yellow);
-  color: #000;
-  border: none;
+
+.input-focus:focus {
+  box-shadow: 0 0 0 0.12rem rgba(126, 200, 80, 0.3);
+  border-color: var(--color-brand-primary);
 }
 
-/* Contact details column */
+.btn-send {
+  background: var(--color-brand-primary);
+  color: var(--color-brand-dark);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-send:hover {
+  background: var(--color-brand-primary-light);
+  transform: translateY(-2px);
+}
+
+/* ---------- Company Info (Right Column) ---------- */
 .contact-right .logo {
   width: 58px;
   height: 58px;
@@ -36,11 +103,12 @@
 }
 
 .contact-right h5 {
-  color: var(--color-yellow);
+  color: var(--color-brand-primary);
   font-weight: 700;
 }
+
 .contact-right p.small {
-  color: #cfd7db;
+  color: var(--color-text-light-muted);
 }
 
 .contact-right .contact-item {
@@ -49,36 +117,60 @@
 
 .contact-right a.text-light {
   text-decoration: none;
-  color: #f3f6f7;
-}
-.contact-right a.text-light:hover {
-  color: var(--color-yellow);
+  color: var(--color-text-light);
+  transition: color 0.3s ease;
 }
 
+.contact-right a.text-light:hover {
+  color: var(--color-brand-primary);
+}
+
+/* ---------- Social Icons ---------- */
 .socials a {
-  color: #d0d7da;
+  color: var(--color-text-light-muted);
   font-size: 1.15rem;
   margin-right: 0.6rem;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
+
 .socials a:hover {
-  color: var(--color-yellow);
+  color: var(--color-brand-primary);
   transform: translateY(-3px);
 }
 
-/* Responsive: hide right column on small devices */
+/* ---------- Text Notes ---------- */
+.contact-left .small-note {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- Responsive ---------- */
 @media (max-width: 991.98px) {
   .contact-right {
     display: none;
   }
+
+  .hero-section {
+    height: 50vh;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
 }
 
-/* Small fancy touches */
-.contact-left .small-note {
-  color: var(--muted);
-  font-size: 0.95rem;
+/* ---------- Animations ---------- */
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.input-focus:focus {
-  box-shadow: 0 0 0 0.12rem rgba(255, 193, 7, 0.18);
-  border-color: var(--color-yellow);
-}
-/* contact_us page -end */

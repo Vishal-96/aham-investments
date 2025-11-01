@@ -1,0 +1,42 @@
+/* =========================================
+   🌟 Root Variables - Color System
+========================================= */
+:root {
+  /* === BRAND COLORS === */
+  --color-brand-primary: #ffc107;
+  --color-brand-primary-light: #ffca2c;
+  --color-brand-dark: #0d0d0d;
+  --color-brand-dark-alt: #111;
+
+  /* === NEUTRALS / BASE === */
+  --color-bg-light: #f8f9fa;
+  --color-bg-dark: var(--color-brand-dark);
+  --color-bg-dark-alt: var(--color-brand-dark-alt);
+  --color-bg-card-light: #ffffff;
+  --color-bg-card-dark: rgba(255, 255, 255, 0.05);
+
+  /* === TEXT COLORS === */
+  --color-text-dark: #212529;
+  --color-text-light: #f8f9fa;
+  --color-text-muted: #6c757d;
+  --color-text-light-muted: #d1d1d1;
+
+  /* === BORDERS & SHADOWS === */
+  --color-border-light: rgba(0, 0, 0, 0.1);
+  --color-border-dark: rgba(255, 255, 255, 0.1);
+  --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --shadow-dark: 0 8px 25px rgba(255, 255, 255, 0.08);
+
+  /* === OVERLAYS & EFFECTS === */
+  --overlay-dark: rgba(0, 0, 0, 0.45);
+  --overlay-light: rgba(255, 255, 255, 0.1);
+  --highlight-gradient: linear-gradient(
+    145deg,
+    rgba(255, 193, 7, 0.15),
+    rgba(255, 193, 7, 0.05)
+  );
+
+  /* === TYPOGRAPHY === */
+  --font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    Arial;
+}
