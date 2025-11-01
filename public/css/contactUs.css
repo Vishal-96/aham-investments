@@ -1,0 +1,84 @@
+/* contact_us page */
+.contact-split {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(13, 13, 13, 0.08);
+}
+
+.contact-left {
+  background: #fff;
+}
+
+.contact-right {
+  background: linear-gradient(180deg, #0b0b0b 0%, #111 100%);
+  color: #e9eef2;
+}
+
+/* Form */
+.form-label.small {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.btn-send {
+  background: var(--color-yellow);
+  color: #000;
+  border: none;
+}
+
+/* Contact details column */
+.contact-right .logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.contact-right h5 {
+  color: var(--color-yellow);
+  font-weight: 700;
+}
+.contact-right p.small {
+  color: #cfd7db;
+}
+
+.contact-right .contact-item {
+  margin-bottom: 0.65rem;
+}
+
+.contact-right a.text-light {
+  text-decoration: none;
+  color: #f3f6f7;
+}
+.contact-right a.text-light:hover {
+  color: var(--color-yellow);
+}
+
+.socials a {
+  color: #d0d7da;
+  font-size: 1.15rem;
+  margin-right: 0.6rem;
+}
+.socials a:hover {
+  color: var(--color-yellow);
+  transform: translateY(-3px);
+}
+
+/* Responsive: hide right column on small devices */
+@media (max-width: 991.98px) {
+  .contact-right {
+    display: none;
+  }
+}
+
+/* Small fancy touches */
+.contact-left .small-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.input-focus:focus {
+  box-shadow: 0 0 0 0.12rem rgba(255, 193, 7, 0.18);
+  border-color: var(--color-yellow);
+}
+/* contact_us page -end */
