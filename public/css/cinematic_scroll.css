@@ -1,0 +1,94 @@
+@import url("theme.css");
+
+body {
+  margin: 0;
+  background: var(--color-bg-dark);
+  overflow-x: hidden;
+}
+
+/* -------- Collage Section -------- */
+.collage-section {
+  position: relative;
+  height: 800vh;
+  background: var(--color-bg-dark-alt);
+  overflow: hidden;
+}
+
+.collage-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center center;
+  perspective: 1200px;
+}
+
+.collage-item {
+  position: absolute;
+  width: 25vw;
+  height: 30vh;
+  border-radius: 12px;
+  opacity: 0;
+  transform: scale(1.3);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Test Colors (replace later with images) */
+.color1 {
+  background: #7ec850;
+}
+.color2 {
+  background: #064635;
+}
+.color3 {
+  background: #f5b700;
+}
+.color4 {
+  background: #c70039;
+}
+.color5 {
+  background: #0096c7;
+}
+.color6 {
+  background: #6a4c93;
+}
+.color7 {
+  background: #ff7b00;
+}
+.color8 {
+  background: #009e60;
+}
+.color9 {
+  background: #ffd166;
+}
+.color10 {
+  background: #118ab2;
+}
+.color11 {
+  background: #ef476f;
+}
+.color12 {
+  background: #06d6a0;
+}
+
+/* Outro Section */
+.collage-outro {
+  background: var(--color-brand-dark);
+  height: 100vh;
+  text-align: center;
+}
+
+.outro-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+}
+
+h2 {
+  color: var(--color-brand-primary);
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+}
