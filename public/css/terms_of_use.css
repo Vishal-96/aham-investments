@@ -58,8 +58,7 @@
 /* Slightly tighter on mobile */
 @media (max-width: 768px) {
   .hero-section {
-    height: 60vh;
-    padding-top: 100px;
+    min-height: 100vh;
   }
 
   .terms-section {

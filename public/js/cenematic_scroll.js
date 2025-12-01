@@ -205,7 +205,6 @@ gsap.registerPlugin(ScrollTrigger);
 
   // ---- Now wire this entire timeline to ScrollTrigger ----
   const totalDuration = master.duration();
-  console.log("Cinematic master duration:", totalDuration);
 
   ScrollTrigger.create({
     animation: master,
