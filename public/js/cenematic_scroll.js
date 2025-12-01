@@ -5,18 +5,19 @@ gsap.registerPlugin(ScrollTrigger);
   const items = gsap.utils.toArray(".collage-item");
   if (!items.length) return;
 
+  // ---- Tuning constants ----
   const appearDur = 0.8;
   const holdDur = 1.0;
   const moveDur = 1.4;
-  const itemSpacing = 0.7;
-  const scrollLength = 10000;
+  const itemSpacing = 0.7; // stagger between items
 
   const vw = window.innerWidth;
   const vh = window.innerHeight;
+
   const cols = vw > 1400 ? 5 : vw > 1100 ? 4 : vw > 800 ? 3 : 2;
   const gap = Math.round(Math.max(10, vw * 0.01));
 
-  // --- Masonry Helper ---
+  // ---- Masonry helper ----
   function packMasonry(list, cols, gap, W, H) {
     const colHeights = Array(cols).fill(0);
     const layout = [];
@@ -25,13 +26,18 @@ gsap.registerPlugin(ScrollTrigger);
     list.forEach((el, i) => {
       const aspect = parseFloat(el.dataset.aspect || rand(0.8, 1.6));
       const span = i % 6 === 0 && cols > 2 ? 2 : 1;
+
       const minCol = colHeights.indexOf(Math.min(...colHeights));
+
       const width = colWidth * span + gap * (span - 1);
       const height = width / aspect;
       const x = minCol * (colWidth + gap);
       const y = colHeights[minCol];
-      for (let c = minCol; c < minCol + span; c++)
+
+      for (let c = minCol; c < minCol + span; c++) {
         colHeights[c] = y + height + gap;
+      }
+
       layout.push({ el, x, y, width, height });
     });
 
@@ -43,9 +49,10 @@ gsap.registerPlugin(ScrollTrigger);
     cols,
     gap,
     vw,
-    vh * 1.6
+    vh * 1.8 // a bit taller so we get a stronger masonry look
   );
 
+  // ---- Initial placement (centered & invisible) ----
   layout.forEach((l) => {
     gsap.set(l.el, {
       position: "absolute",
@@ -54,63 +61,27 @@ gsap.registerPlugin(ScrollTrigger);
       left: vw / 2 - l.width / 2,
       top: vh / 2 - l.height / 2,
       opacity: 0,
-      scale: 1.3,
+      scale: 1.3
     });
   });
 
+  // ---- Overlay for fade-to-black moment ----
   const overlay = document.createElement("div");
   overlay.className = "fade-overlay";
   document.body.appendChild(overlay);
   gsap.set(overlay, { opacity: 0 });
-  gsap.set(".collage-outro", { opacity: 0, y: 60 });
 
-  // === DEBUG INFO ===
-  console.log(
-    "%c[DEBUG] Collage grid calculated height:",
-    "color: limegreen",
-    gridHeight
-  );
-  console.log("%c[DEBUG] Viewport height:", "color: cyan", vh);
-  console.log(
-    "%c[DEBUG] Expected dead zone (approx):",
-    "color: orange",
-    gridHeight - vh
-  );
+  // ---- Master timeline (no ScrollTrigger yet) ----
+  const master = gsap.timeline();
 
-  const master = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".collage-section",
-      start: "top top",
-      end: `+=${scrollLength}`,
-      scrub: 1.3,
-      pin: true,
-      anticipatePin: 1,
-
-      // 🧩 Scroll update logger
-      onUpdate: (self) => {
-        const progress = self.progress.toFixed(3);
-        const scrollPos = self.scroll();
-        const cont = document.querySelector(".collage-container");
-        const rect = cont?.getBoundingClientRect();
-        if (rect) {
-          console.log(
-            `[Scroll] pos=${scrollPos} | progress=${progress} | container.top=${rect.top.toFixed(
-              1
-            )} | container.bottom=${rect.bottom.toFixed(1)}`
-          );
-        }
-      },
-      onLeave: () => console.log("%c[DEBUG] Outro triggered!", "color: yellow"),
-    },
-  });
-
-  // STEP 1: Appear → Hold → Move
+  // STEP 1: each image – appear → hold → move into grid
   layout.forEach((l, i) => {
-    const delay = i * itemSpacing;
+    const base = i * itemSpacing; // absolute time position for this item
+
     const randomX = (Math.random() - 0.5) * 400;
     const randomY = (Math.random() - 0.5) * 300;
-    const randomZ = -100 * (i % 5);
 
+    // appear & float
     master.to(
       l.el,
       {
@@ -118,106 +89,137 @@ gsap.registerPlugin(ScrollTrigger);
         scale: 1,
         x: randomX,
         y: randomY,
-        z: randomZ,
         duration: appearDur,
-        ease: "power2.out",
+        ease: "power2.out"
       },
-      delay
+      base
     );
 
-    master.to(l.el, { duration: holdDur }, delay + appearDur);
+    // hold on screen
+    master.to(
+      l.el,
+      {
+        duration: holdDur
+      },
+      base + appearDur
+    );
 
+    // move into its masonry slot
     master.to(
       l.el,
       {
         x: l.x - (vw / 2 - l.width / 2),
         y: l.y - (vh / 2 - l.height / 2),
-        z: 0,
         scale: 1,
         duration: moveDur,
-        ease: "power3.inOut",
+        ease: "power3.inOut"
       },
-      delay + appearDur + holdDur
+      base + appearDur + holdDur
     );
   });
 
-  // STEP 2: Zoom-out
+  // Time when the last item has completely finished moving into the grid
+  const lastIndex = layout.length - 1;
+  const lastEndTime =
+    lastIndex * itemSpacing + appearDur + holdDur + moveDur;
+
+  let t = lastEndTime + 0.5; // start next phase after everything is fully in place
+
+  // STEP 2: zoom out a bit (camera pull-back)
   master.to(
     ".collage-container",
-    { scale: 0.9, duration: 2.2, ease: "power2.inOut" },
-    "+=1.0"
+    {
+      scale: 0.9,
+      duration: 2.0,
+      ease: "power2.inOut"
+    },
+    t
   );
-  // STEP 3: Smooth camera pan to reveal full collage without overshoot
+  t += 2.0;
+
+  // STEP 3: gentle vertical pan to reveal more of the grid
   const extraScroll = Math.max(gridHeight - vh, 0);
-  console.log({ extraScroll });
-  const moveDown = extraScroll > 0 ? -extraScroll / 3.5 : 0; // slightly lighter pan
+  const moveDown = extraScroll > 0 ? -extraScroll / 3.5 : 0;
 
   master.to(
     ".collage-container",
     {
       y: moveDown,
-      duration: 3.5,
-      ease: "power2.inOut",
-      onUpdate: () => {
-        const rect = document
-          .querySelector(".collage-container")
-          .getBoundingClientRect();
-        console.log(
-          `%c[Reveal] container.top=${rect.top.toFixed(
-            1
-          )} bottom=${rect.bottom.toFixed(1)}`,
-          "color: orange"
-        );
-      },
+      duration: 3.0,
+      ease: "power2.inOut"
     },
-    "-=0.8"
+    t
+  );
+  t += 3.0;
+
+  // STEP 4: fade-to-black moment + soften collage, then clear overlay
+  master.to(
+    overlay,
+    {
+      opacity: 1,
+      duration: 1.2,
+      ease: "power2.inOut"
+    },
+    t
+  );
+  t += 1.2;
+
+  // dim & fade out the collage items under the overlay
+  master.to(
+    ".collage-item",
+    {
+      opacity: 0,
+      boxShadow: "0px 0px 0px rgba(0,0,0,0)",
+      duration: 0.8,
+      ease: "power1.out"
+    },
+    t - 0.6 // overlaps slightly with overlay peak
   );
 
-  // STEP 4: Fade overlay + outro a bit earlier for perfect sync
-  master
-    .to(
-      overlay,
-      {
-        opacity: 1,
-        duration: 1.3,
-        ease: "power2.inOut",
-      },
-      "-=1.0"
-    ) // start sooner
-    .to(
-      overlay,
-      {
-        opacity: 0,
-        duration: 1.2,
-        ease: "power2.inOut",
-      },
-      "+=0.5"
-    )
-    .to(
-      ".collage-outro",
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.8,
-        ease: "power2.out",
-        onStart: () =>
-          console.log(
-            "%c[DEBUG] Outro triggered (final tuned)",
-            "color: yellow"
-          ),
-      },
-      "-=1.0"
-    );
+  master.to(
+    ".collage-container",
+    {
+      opacity: 0,
+      duration: 0.8,
+      ease: "power1.out"
+    },
+    t - 0.6
+  );
 
-  // STEP 5: Smooth release
-  master.to({}, { duration: 0.2 });
+  t += 0.6;
 
-  // DEBUG refresh + size check on resize
+  // fade overlay away to reveal the normal page below (outro + footer)
+  master.to(
+    overlay,
+    {
+      opacity: 0,
+      duration: 0.9,
+      ease: "power2.out"
+    },
+    t
+  );
+  t += 0.9;
+
+  // small tail so scrub at the end feels smooth
+  master.to({}, { duration: 0.3 }, t);
+
+  // ---- Now wire this entire timeline to ScrollTrigger ----
+  const totalDuration = master.duration();
+  console.log("Cinematic master duration:", totalDuration);
+
+  ScrollTrigger.create({
+    animation: master,
+    trigger: ".collage-section",
+    start: "top top",
+    end: "+=" + totalDuration * 200, // scale factor = scroll “length”
+    scrub: 1.2,
+    pin: ".collage-container",
+    pinSpacing: false,
+    anticipatePin: 1
+  });
+
+  // Refresh on resize to keep sticky + trigger correct
   window.addEventListener("resize", () => {
-    console.log(
-      "%c[DEBUG] Window resized — recomputing grid",
-      "color: skyblue"
-    );
     ScrollTrigger.refresh();
   });
 })();
