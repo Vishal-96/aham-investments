@@ -13,6 +13,8 @@
       return;
     }
 
+    form.reset();
+    return alert("Message validated!, Not sent as its a test server.");
     spinner.classList.remove("d-none");
     submitBtn.setAttribute("disabled", "disabled");
 
