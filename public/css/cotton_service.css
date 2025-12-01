@@ -4,7 +4,7 @@
 .hero-section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: url("../assets/aham_investment_co_ltd_image_102.webp")
     center/cover no-repeat;
   display: flex;
@@ -125,81 +125,6 @@
 .cotton-outro {
   position: relative;
   width: 100%;
-  height: 80vh;
-  background: url("../assets/cotton_outro_landscape.webp") center/cover
-    no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
-
-/* Softer natural gradient for cotton theme */
-.cotton-outro .overlay {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(8, 95, 60, 0.7) 0%,
-    rgba(4, 57, 39, 0.85) 60%,
-    rgba(0, 0, 0, 0.7) 100%
-  );
-  z-index: 1;
-}
-
-.cotton-outro .content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  padding: 2rem;
-  animation: fadeInOverlay 1.8s ease-in-out;
-}
-
-.cotton-outro h2 {
-  color: var(--color-text-light);
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
-}
-
-.cotton-outro p {
-  color: var(--color-text-light-muted);
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-.cotton-outro .btn-brand-warning {
-  font-size: 1.1rem;
-  padding: 0.75rem 2rem;
-  border-radius: 50px;
-  box-shadow: 0 0 25px rgba(126, 200, 80, 0.4);
-  transition: all 0.4s ease;
-}
-
-.cotton-outro .btn-brand-warning:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 35px rgba(126, 200, 80, 0.7);
-}
-
-/* ---------- Responsive ---------- */
-@media (max-width: 991.98px) {
-  .cotton-outro {
-    height: 60vh;
-    padding: 2rem 1rem;
-  }
-
-  .cotton-outro h2 {
-    font-size: 1.8rem;
-  }
-
-  .cotton-outro p {
-    font-size: 0.95rem;
-  }
-}
-/* ---------- Cotton Outro Section ---------- */
-.cotton-outro {
-  position: relative;
-  width: 100%;
   height: 90vh;
   overflow: hidden;
   display: flex;
@@ -245,7 +170,7 @@
 .cotton-outro .content {
   position: relative;
   z-index: 3;
-  max-width: 800px;
+  max-width: 600px;
   padding: 2rem;
   animation: fadeInOverlay 1.8s ease-in-out;
 }
@@ -275,6 +200,56 @@
   box-shadow: 0 0 35px rgba(126, 200, 80, 0.7);
 }
 
+/* ----- Cotton Operations Summary ----- */
+.cotton-operations {
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+}
+
+.cotton-operations h2 {
+  font-size: 1.9rem;
+}
+
+.cotton-operations-list h5 {
+  font-size: 1.05rem;
+}
+
+.cotton-operations-list p {
+  font-size: 0.95rem;
+}
+
+/* Number badge (mobile-safe, no weird wrapping) */
+.number-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-brand-primary);
+  color: var(--color-text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Gallery at the end of section */
+.cotton-gallery .gallery-frame {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  background: #fff;
+}
+
+.cotton-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
 /* === Responsive === */
 @media (max-width: 991.98px) {
   .cotton-outro {
@@ -289,12 +264,9 @@
   .cotton-outro p {
     font-size: 0.95rem;
   }
-}
 
-/* ---------- Responsive ---------- */
-@media (max-width: 991.98px) {
   .hero-section {
-    height: 50vh;
+    height: 100vh;
   }
 
   .hero-section h1 {
@@ -303,6 +275,21 @@
 
   .hero-section p {
     font-size: 1rem;
+  }
+}
+
+/* Small tweak for mobile spacing */
+@media (max-width: 767.98px) {
+  .cotton-operations h2 {
+    font-size: 1.6rem;
+  }
+
+  .cotton-operations-list .d-flex {
+    align-items: flex-start;
+  }
+
+  .number-badge {
+    margin-top: 2px;
   }
 }
 
