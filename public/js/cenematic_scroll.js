@@ -1,4 +1,3 @@
-// cinematic_scroll_debug.js — adds console logs for diagnosing dead zone
 gsap.registerPlugin(ScrollTrigger);
 
 (function () {
@@ -150,6 +149,7 @@ gsap.registerPlugin(ScrollTrigger);
   );
   // STEP 3: Smooth camera pan to reveal full collage without overshoot
   const extraScroll = Math.max(gridHeight - vh, 0);
+  console.log({ extraScroll });
   const moveDown = extraScroll > 0 ? -extraScroll / 3.5 : 0; // slightly lighter pan
 
   master.to(
