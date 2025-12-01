@@ -4,7 +4,7 @@
 .hero-section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: url("../assets/aham_investment_co_ltd_image_124.webp")
     center/cover no-repeat;
   display: flex;
@@ -103,6 +103,109 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* ---------- Transport Strengths (dark cards) ---------- */
+.transport-strengths {
+  background: radial-gradient(
+      circle at top,
+      rgba(126, 200, 80, 0.08),
+      transparent 60%
+    ),
+    var(--color-bg-dark-alt);
+  color: var(--color-text-light);
+  min-height: 80vh;
+}
+
+.transport-strengths h2 {
+  color: var(--color-brand-primary);
+}
+.transport-strengths p {
+  font-size: 1.2rem;
+}
+
+.transport-strengths .text-light-muted {
+  color: var(--color-text-light-muted);
+}
+
+.transport-strength-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  padding: 1.5rem 1.4rem;
+  border: 1px solid var(--color-border-dark);
+  box-shadow: var(--shadow-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease, background 0.25s ease;
+}
+
+.transport-strength-card p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--color-text-light-muted);
+}
+
+.transport-strength-card strong {
+  color: var(--color-brand-primary);
+  font-weight: 600;
+}
+
+.transport-strength-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(126, 200, 80, 0.5);
+}
+
+/* icon bubble */
+.strength-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(126, 200, 80, 0.12);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.strength-icon i {
+  font-size: 1.1rem;
+  color: var(--color-brand-primary);
+}
+
+/* ---------- Final CTA band ---------- */
+.transport-cta-section {
+  position: relative;
+  background: url("../assets/transportation.webp") center/cover no-repeat;
+  color: var(--color-text-light);
+  overflow: hidden;
+  min-height: 50vh;
+}
+
+.transport-cta-section .cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    140deg,
+    rgba(4, 57, 39, 0.85),
+    rgba(6, 70, 53, 0.75),
+    rgba(0, 0, 0, 0.55)
+  );
+  z-index: 1;
+}
+
+.transport-cta-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.transport-cta-section p {
+  color: var(--color-text-light-muted);
+  line-height: 1.7;
+  font-size: 1.2rem;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 991.98px) {
   .transport-section {
@@ -120,12 +223,9 @@
   .transport-section img {
     margin-top: 1.5rem;
   }
-}
 
-/* ---------- Responsive ---------- */
-@media (max-width: 991.98px) {
   .hero-section {
-    height: 50vh;
+    height: 100vh;
   }
 
   .hero-section h1 {
@@ -134,5 +234,21 @@
 
   .hero-section p {
     font-size: 1rem;
+  }
+  .transport-strength-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .strength-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .transport-cta-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .transport-cta-section p {
+    font-size: 0.95rem;
   }
 }
