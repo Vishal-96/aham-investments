@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Workmate — Coming Soon</title>
+
+    <!-- Brand Theme (Embedded Mini) -->
+    <style>
+      :root {
+        --color-brand-primary: #7ec850;
+        --color-brand-dark: #043927;
+        --color-text-light: #f8f9fa;
+        --color-text-muted: #d1d1d1;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, sans-serif;
+        background: linear-gradient(
+            120deg,
+            rgba(4, 57, 39, 0.8),
+            rgba(6, 70, 53, 0.75),
+            rgba(0, 0, 0, 0.65)
+          ),
+          url("public/assets/coming_soon_bg.webp") center/cover no-repeat;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--color-text-light);
+      }
+
+      .box {
+        max-width: 600px;
+        padding: 2.5rem 2rem;
+        border-radius: 16px;
+        background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      h1 {
+        font-size: 2.8rem;
+        margin-bottom: 0.8rem;
+        font-weight: 700;
+      }
+
+      p {
+        color: var(--color-text-muted);
+        font-size: 1.05rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .btn-back {
+        display: inline-block;
+        background: var(--color-brand-primary);
+        color: var(--color-brand-dark);
+        padding: 0.75rem 1.6rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s ease;
+      }
+
+      .btn-back:hover {
+        background: #a6e87c;
+      }
+
+      .logo {
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2.2rem;
+        }
+        .box {
+          padding: 2rem 1.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <img src="public/assets/logo.webp" alt="Workmate Logo" class="logo" />
+      <h1>Workmate</h1>
+      <p>We're building something exciting. Stay tuned!</p>
+
+      <a href="index.html" class="btn-back">Back to AHAM INVESTMENTS CO. LTD</a>
+    </div>
+  </body>
+</html>
