@@ -4,6 +4,15 @@
   const spinner = document.getElementById("contactSpinner");
   const submitBtn = document.getElementById("contactSubmit");
 
+  const params = new URLSearchParams(window.location.search);
+  const vehicle = params.get("vehicle");
+  const messageField = document.getElementById("c_message");
+
+  if (vehicle && messageField) {
+    messageField.value = `I would like to hire a ${vehicle}.`;
+    messageField.focus();
+  }
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     e.stopPropagation();

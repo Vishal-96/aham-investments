@@ -140,8 +140,12 @@
 
           <div class="col-lg-6 text-center">
             <img
+              loading="lazy"
+              decoding="async"
+              data-lightbox
+              data-caption="Cotton Field Harvest"
               src="../public/assets/aham_investment_co_ltd_image_49.webp"
-              alt="Cotton Ginning Process"
+              alt="Cotton Field Harvest"
               class="img-fluid rounded-3 shadow-lg cotton-media"
             />
           </div>
@@ -251,7 +255,9 @@
             <div class="d-flex align-items-start">
               <div class="number-badge me-3">2</div>
               <div>
-                <h5 class="fw-bold mb-1">Expert Team and Seamless Operations</h5>
+                <h5 class="fw-bold mb-1">
+                  Expert Team and Seamless Operations
+                </h5>
                 <p class="mb-0 text-muted small lh-lg">
                   From sourcing raw cotton directly from farmers to ginning,
                   packing and global dispatch, our experienced team ensures
@@ -283,7 +289,9 @@
             <div class="d-flex align-items-start">
               <div class="number-badge me-3">4</div>
               <div>
-                <h5 class="fw-bold mb-1">Collaboration with Tanzania Cotton Board (TCB)</h5>
+                <h5 class="fw-bold mb-1">
+                  Collaboration with Tanzania Cotton Board (TCB)
+                </h5>
                 <p class="mb-0 text-muted small lh-lg">
                   We collaborate closely with the
                   <strong>Tanzania Cotton Board (TCB)</strong> and participate
@@ -323,8 +331,12 @@
           <div class="col-6 col-md-3">
             <div class="gallery-frame">
               <img
+                loading="lazy"
+                decoding="async"
+                data-lightbox
+                data-caption="Raw Cotton"
                 src="../public/assets/aham_investment_co_ltd_image_153.webp"
-                alt="Cotton field support"
+                alt="Raw Cotton"
                 class="img-fluid"
               />
             </div>
@@ -333,8 +345,12 @@
           <div class="col-6 col-md-3">
             <div class="gallery-frame">
               <img
+                loading="lazy"
+                decoding="async"
+                data-lightbox
+                data-caption="Harvested Cotton"
                 src="../public/assets/aham_investment_co_ltd_image_143.webp"
-                alt="Cotton processing facility"
+                alt="Harvested Cotton"
                 class="img-fluid"
               />
             </div>
@@ -343,8 +359,12 @@
           <div class="col-6 col-md-3">
             <div class="gallery-frame">
               <img
+                loading="lazy"
+                decoding="async"
+                data-lightbox
+                data-caption="Cotton processing"
                 src="../public/assets/aham_investment_co_ltd_image_165.webp"
-                alt="Lint bale storage"
+                alt="Cotton processing"
                 class="img-fluid"
               />
             </div>
@@ -353,6 +373,10 @@
           <div class="col-6 col-md-3">
             <div class="gallery-frame">
               <img
+                loading="lazy"
+                decoding="async"
+                data-lightbox
+                data-caption="Farmer engagement"
                 src="../public/assets/aham_investment_co_ltd_image_151.webp"
                 alt="Farmer engagement"
                 class="img-fluid"
@@ -530,6 +554,19 @@
       </div>
     </footer>
     <!-- Footer End -->
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <button class="lightbox-nav prev" aria-label="Previous image">
+        &#10094;
+      </button>
+      <img class="lightbox-img" alt="" />
+      <button class="lightbox-nav next" aria-label="Next image">
+        &#10095;
+      </button>
+      <div class="lightbox-caption"></div>
+      <span class="lightbox-close">&times;</span>
+    </div>
+    <!-- Lightbox End -->
 
     <!-- Bootstrap + main JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
