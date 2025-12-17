@@ -175,13 +175,15 @@
 }
 
 /* ---------- Vehicle Hire Section ---------- */
+/* ---------- Vehicle Hire Section ---------- */
 .vehicle-hire-section {
   background: var(--color-bg-light);
 }
 
 .vehicle-hire-section .container {
   min-height: 75vh;
-  align-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .vehicle-hire-section h2 {
@@ -193,26 +195,30 @@
   line-height: 1.7;
 }
 
-/* Carousel */
+/* ---------- Carousel Wrapper ---------- */
 .vehicle-carousel {
   position: relative;
   overflow: hidden;
-  background: #fff;
+  background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
   padding: 2rem 3rem;
 }
 
+/* Track */
 .carousel-track {
   display: flex;
   transition: transform 0.6s ease;
 }
 
+/* ---------- Vehicle Card (UNIFORM) ---------- */
 .vehicle-card {
   min-width: 100%;
-  text-align: center;
+  height: 520px; /* 🔒 fixed height for uniformity */
+  display: flex;
+  flex-direction: column;
   opacity: 0;
-  transform: scale(0.95);
+  transform: scale(0.96);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
@@ -221,34 +227,64 @@
   transform: scale(1);
 }
 
-.vehicle-card img {
+/* ---------- Image Area (Top 60%) ---------- */
+.vehicle-image {
+  height: 60%;
   width: 100%;
-  min-height: 260px;
-  object-fit: cover;
+  overflow: hidden;
   border-radius: 12px;
-  margin-bottom: 1rem;
 }
 
-.vehicle-card h5 {
+.vehicle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ---------- Content Area (Bottom 40%) ---------- */
+.vehicle-content {
+  height: 40%;
+  padding: 1.2rem 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+/* Hire button */
+.btn-hire {
+  font-size: 0.95rem;
+  padding: 0.55rem 1.6rem;
+  border-radius: 30px;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
-.vehicle-card p {
+/* Title */
+.vehicle-content h5 {
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+}
+
+/* Description */
+.vehicle-content p {
   font-size: 0.95rem;
   color: var(--color-text-muted);
-  margin-bottom: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 90%;
 }
 
-/* Nav buttons */
+/* ---------- Carousel Navigation ---------- */
 .carousel-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background: rgba(126, 200, 80, 0.15);
   border: none;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -259,25 +295,33 @@
 
 .carousel-nav i {
   color: var(--color-brand-primary);
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .carousel-nav.prev {
-  left: 12px;
+  left: 14px;
 }
 
 .carousel-nav.next {
-  right: 12px;
+  right: 14px;
 }
 
-/* Responsive */
+/* ---------- Responsive ---------- */
 @media (max-width: 991.98px) {
   .vehicle-carousel {
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 1.8rem;
   }
 
-  .vehicle-card img {
-    max-height: 220px;
+  .vehicle-card {
+    height: 480px;
+  }
+
+  .vehicle-image {
+    height: 55%;
+  }
+
+  .vehicle-content {
+    height: 45%;
   }
 }
 
