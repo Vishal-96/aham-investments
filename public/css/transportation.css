@@ -178,8 +178,10 @@
 /* ---------- Vehicle Hire Section ---------- */
 .vehicle-hire-section {
   background: var(--color-bg-light);
+  overflow-x: hidden; /* prevent horizontal scroll on mobile */
 }
 
+/* Desktop layout */
 .vehicle-hire-section .container {
   min-height: 75vh;
   display: flex;
@@ -203,18 +205,20 @@
   border-radius: 16px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
   padding: 2rem 3rem;
+  width: 100%;
 }
 
 /* Track */
 .carousel-track {
   display: flex;
   transition: transform 0.6s ease;
+  will-change: transform;
 }
 
 /* ---------- Vehicle Card (UNIFORM) ---------- */
 .vehicle-card {
   min-width: 100%;
-  height: 520px; /* 🔒 fixed height for uniformity */
+  height: 520px; /* desktop fixed height */
   display: flex;
   flex-direction: column;
   opacity: 0;
@@ -233,6 +237,7 @@
   width: 100%;
   overflow: hidden;
   border-radius: 12px;
+  background: #fff;
 }
 
 .vehicle-image img {
@@ -244,7 +249,7 @@
 /* ---------- Content Area (Bottom 40%) ---------- */
 .vehicle-content {
   height: 40%;
-  padding: 1.2rem 0.5rem 0;
+  padding: 1.2rem 0.75rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -252,19 +257,10 @@
   text-align: center;
 }
 
-/* Hire button */
-.btn-hire {
-  font-size: 0.95rem;
-  padding: 0.55rem 1.6rem;
-  border-radius: 30px;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-}
-
 /* Title */
 .vehicle-content h5 {
   font-weight: 600;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.15rem;
 }
 
 /* Description */
@@ -274,6 +270,15 @@
   line-height: 1.5;
   margin: 0;
   max-width: 90%;
+}
+
+/* Hire button */
+.btn-hire {
+  font-size: 1rem;
+  padding: 0.65rem 1.8rem;
+  border-radius: 30px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 /* ---------- Carousel Navigation ---------- */
@@ -306,14 +311,20 @@
   right: 14px;
 }
 
-/* ---------- Responsive ---------- */
+/* ---------- Responsive Fixes ---------- */
 @media (max-width: 991.98px) {
+  /* IMPORTANT: remove flex lock */
+  .vehicle-hire-section .container {
+    min-height: auto;
+    display: block;
+  }
+
   .vehicle-carousel {
-    padding: 1.5rem 1.8rem;
+    padding: 1.25rem 1.25rem;
   }
 
   .vehicle-card {
-    height: 480px;
+    height: 420px;
   }
 
   .vehicle-image {
@@ -322,6 +333,18 @@
 
   .vehicle-content {
     height: 45%;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 576px) {
+  .vehicle-card {
+    height: 380px;
+  }
+
+  .btn-hire {
+    font-size: 0.95rem;
+    padding: 0.55rem 1.5rem;
   }
 }
 
