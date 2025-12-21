@@ -1,0 +1,246 @@
+@import url("theme.css");
+
+/* ---------- Hero Header Section ---------- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("../assets/aham_investment_co_ltd_image_111.webp")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    195deg,
+    rgba(3, 40, 25, 0.9) 0%,
+    rgba(4, 57, 39, 0.8) 50%,
+    rgba(6, 70, 53, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+.hero-section .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+  animation: fadeInOverlay 1.8s ease-in-out;
+}
+
+.hero-section h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+}
+
+.hero-section p {
+  color: var(--color-text-light-muted);
+  font-size: 1.1rem;
+  margin-top: 0.75rem;
+}
+
+.hero-section .hero-content h1 {
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section h4 {
+  color: var(--color-text-light-muted);
+  font-weight: 400;
+  margin-bottom: 1.8rem;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+}
+
+.hero-section .btn-brand-warning {
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(126, 200, 80, 0.3);
+  transition: all 0.4s ease;
+}
+
+.hero-section .btn-brand-warning:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(126, 200, 80, 0.6);
+}
+
+/* ---------- Construction Section ---------- */
+.construction-section {
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+  min-height: 100vh;
+}
+
+.construction-section h2 {
+  font-size: 1.8rem;
+  color: var(--color-text-dark);
+}
+
+.construction-section p {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.construction-section img {
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.construction-section img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+  .construction-section {
+    padding: 3rem 1rem;
+  }
+
+  .construction-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .construction-section p {
+    font-size: 0.95rem;
+  }
+
+  .construction-section img {
+    margin-top: 1.5rem;
+  }
+}
+
+/* ---------- Construction Outro Section ---------- */
+.construction-outro {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  background: url("../assets/aham_investment_co_ltd_image_123.webp") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Subtle dark overlay to ensure readability */
+.construction-outro .overlay {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(4, 57, 39, 0.75) 0%,
+    rgba(6, 70, 53, 0.9) 100%
+  );
+  z-index: 1;
+}
+
+.construction-outro .content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+  animation: fadeInOverlay 1.8s ease-in-out;
+}
+
+.construction-outro h2 {
+  color: var(--color-text-light);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.construction-outro p {
+  color: var(--color-text-light-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.construction-outro .btn-brand-warning {
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 0 25px rgba(126, 200, 80, 0.4);
+  transition: all 0.4s ease;
+}
+
+.construction-outro .btn-brand-warning:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 35px rgba(126, 200, 80, 0.7);
+}
+
+/* New Construction Details Section */
+.construction-details h4 {
+  color: var(--color-brand-primary);
+}
+
+.construction-details p {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* Gallery Grid */
+.construction-gallery {
+  background: var(--color-bg-light);
+}
+
+.construction-gallery .gallery-item img,
+.construction-gallery .gallery-video {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.construction-gallery .gallery-item img:hover,
+.construction-gallery .gallery-video:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .construction-gallery .gallery-item img,
+  .construction-gallery .gallery-video {
+    height: 200px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .construction-outro {
+    min-height: 60vh;
+    padding: 2rem 1rem;
+  }
+
+  .construction-outro h2 {
+    font-size: 1.8rem;
+  }
+
+  .construction-outro p {
+    font-size: 0.95rem;
+  }
+
+  .hero-section {
+    height: 100vh;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,68 @@
+@import url("theme.css");
+
+.hero-section {
+  height: 100vh;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  background: linear-gradient(
+      120deg,
+      rgba(4, 57, 39, 0.75),
+      rgba(6, 70, 53, 0.65),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../assets/terms_of_use.webp") center/cover no-repeat;
+
+  color: var(--color-text-light);
+}
+
+/* Terms content section */
+.terms-section {
+  background: var(--color-bg-dark-alt);
+  color: var(--color-text-light);
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.terms-section h2,
+.terms-section h4 {
+  color: var(--color-brand-primary);
+}
+
+.terms-section p,
+.terms-section ul li {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.terms-section ul {
+  margin-bottom: 1rem;
+  padding-left: 1.2rem;
+}
+
+.terms-section strong {
+  color: var(--color-brand-primary);
+}
+
+.terms-section a {
+  text-decoration: none;
+}
+
+.terms-section a:hover {
+  text-decoration: underline;
+}
+
+/* Slightly tighter on mobile */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 100vh;
+  }
+
+  .terms-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}

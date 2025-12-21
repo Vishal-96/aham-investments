@@ -1,0 +1,174 @@
+@import url("theme.css");
+
+/* ---------- Hero Header Section ---------- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url("../assets/aham_investment_co_ltd_image_48.webp") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(4, 57, 39, 0.7) 0%,
+    rgba(6, 70, 53, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+.hero-section .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+  animation: fadeInOverlay 1.8s ease-in-out;
+}
+
+.hero-section h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+}
+
+.hero-section p {
+  color: var(--color-text-light-muted);
+  font-size: 1.1rem;
+  margin-top: 0.75rem;
+}
+
+/* ---------- Contact Split Layout ---------- */
+.contact-split {
+  max-width: 1100px;
+  margin: 3rem auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(6, 70, 53, 0.1);
+}
+
+.contact-left {
+  background: var(--color-bg-card-light);
+  color: var(--color-text-dark);
+}
+
+.contact-right {
+  background: linear-gradient(
+    180deg,
+    var(--color-brand-dark) 0%,
+    var(--color-brand-dark-alt) 100%
+  );
+  color: var(--color-text-light);
+}
+
+/* ---------- Form Styles ---------- */
+.form-label.small {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.input-focus:focus {
+  box-shadow: 0 0 0 0.12rem rgba(126, 200, 80, 0.3);
+  border-color: var(--color-brand-primary);
+}
+
+.btn-send {
+  background: var(--color-brand-primary);
+  color: var(--color-brand-dark);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-send:hover {
+  background: var(--color-brand-primary-light);
+  transform: translateY(-2px);
+}
+
+/* ---------- Company Info (Right Column) ---------- */
+.contact-right .logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.contact-right h5 {
+  color: var(--color-brand-primary);
+  font-weight: 700;
+}
+
+.contact-right p.small {
+  color: var(--color-text-light-muted);
+}
+
+.contact-right .contact-item {
+  margin-bottom: 0.65rem;
+}
+
+.contact-right a.text-light {
+  text-decoration: none;
+  color: var(--color-text-light);
+  transition: color 0.3s ease;
+}
+
+.contact-right a.text-light:hover {
+  color: var(--color-brand-primary);
+}
+
+/* ---------- Social Icons ---------- */
+.socials a {
+  color: var(--color-text-light-muted);
+  font-size: 1.15rem;
+  margin-right: 0.6rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.socials a:hover {
+  color: var(--color-brand-primary);
+  transform: translateY(-3px);
+}
+
+/* ---------- Text Notes ---------- */
+.contact-left .small-note {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991.98px) {
+  .contact-right {
+    display: none;
+  }
+
+  .hero-section {
+    min-height: 100vh;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

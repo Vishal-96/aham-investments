@@ -1,0 +1,339 @@
+@import url("theme.css");
+
+/* =========================================
+   Landing Page Sections
+========================================= */
+/* Loader */
+
+#loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-card-light);
+  z-index: 1000;
+}
+
+.loader-logo img {
+  width: 200px;
+}
+
+.loader-progress {
+  width: 0%;
+  height: 4px;
+  background-color: var(--color-brand-primary-light);
+  transition: width 0.5s ease-in-out;
+}
+/* Loader ends */
+
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.hero-section .carousel-inner img {
+  object-fit: cover;
+  height: 100vh;
+  width: 100%;
+}
+.hero-section .hero-overlay {
+  background: var(--overlay-dark);
+  z-index: 1;
+}
+.hero-content {
+  z-index: 2;
+}
+.hero-content h1,
+.hero-content p {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+.hero-content h1 {
+  font-size: 2.6rem;
+}
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Services Section */
+#services {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--color-bg-light);
+}
+.service-card {
+  background: var(--color-bg-card-light);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-light);
+}
+.service-img {
+  height: 250px;
+  object-fit: cover;
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+.service-card:hover .service-img {
+  transform: scale(1.05);
+}
+.service-card .p-4 {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.service-card .btn {
+  align-self: center;
+}
+.hover-grow {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-grow:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+}
+@media (max-width: 991.98px) {
+  #services {
+    height: auto;
+    padding: 3rem 0;
+  }
+  .service-img {
+    height: 220px;
+  }
+}
+
+/* Video Section */
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.video-section video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+  z-index: 1;
+}
+.video-overlay {
+  position: relative;
+  z-index: 2;
+  background: var(--overlay-dark);
+  padding: 2rem;
+  animation: fadeInOverlay 2s ease-in-out;
+}
+.video-overlay h2,
+.video-overlay p {
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 991.98px) {
+  .video-section {
+    height: 80vh;
+  }
+}
+@media (max-width: 576px) {
+  .video-section {
+    height: 70vh;
+  }
+}
+
+/* What Sets Us Apart (Dark Theme) */
+#why-us {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    var(--color-bg-dark) 0%,
+    var(--color-bg-dark-alt) 100%
+  );
+  color: var(--color-text-light);
+}
+#why-us h2,
+#why-us h5 {
+  color: var(--color-text-light);
+}
+#why-us p {
+  font-size: 0.95rem;
+  color: var(--color-text-light-muted);
+}
+#why-us .card {
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--color-bg-card-dark);
+  border: 1px solid var(--color-border-dark);
+  backdrop-filter: blur(6px);
+}
+#why-us .card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-dark);
+}
+#why-us .highlight-card {
+  background: var(--highlight-gradient);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+.icon-wrapper {
+  background: rgba(255, 193, 7, 0.2);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 991.98px) {
+  #why-us {
+    height: auto;
+    padding: 4rem 0;
+  }
+}
+
+/* Our Clients (Light Theme) */
+#clients {
+  background: var(--color-bg-light);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  color: var(--color-text-dark);
+}
+#clients h2 {
+  color: var(--color-text-dark);
+}
+#clients h4 {
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+.client-card {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  background: var(--color-bg-card-light);
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-light);
+}
+.client-logo {
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: all 0.4s ease;
+  max-height: 100px;
+}
+.client-card:hover .client-logo {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.5);
+}
+.client-card:hover {
+  transform: translateY(20px);
+}
+#clients h6 {
+  font-size: 1rem;
+  color: var(--color-text-dark);
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+@media (max-width: 991.98px) {
+  #clients {
+    height: auto;
+    padding: 5rem 0;
+  }
+  .client-logo {
+    max-height: 80px;
+  }
+  #clients h2 {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 575.98px) {
+  .client-logo {
+    max-height: 70px;
+  }
+  #clients h6 {
+    font-size: 0.9rem;
+  }
+  #clients h4 {
+    font-size: 0.5;
+  }
+  .client-card .client-logo {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+}
+
+/* Global Reach Section */
+#global-reach {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.global-bg {
+  background-image: url("../assets/global_reach.png");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4);
+  z-index: 1;
+}
+#global-reach .container {
+  z-index: 2;
+  position: relative;
+}
+#global-reach h2 {
+  font-size: 2.2rem;
+  color: var(--color-text-light);
+}
+#global-reach p {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  color: var(--color-text-light-muted);
+}
+
+/* Modal Styling */
+#globalMapModal .modal-content {
+  background-color: var(--color-brand-dark-alt);
+  border-radius: 10px;
+}
+.map-container {
+  max-height: 80vh;
+  cursor: grab;
+}
+.map-image {
+  transition: transform 0.25s ease;
+}
+.map-container.zoomed {
+  cursor: move;
+}

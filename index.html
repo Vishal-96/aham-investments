@@ -3,75 +3,896 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Aham Investments - Coming Soon</title>
+    <link rel="icon" type="image/png" href="public/assets/favicon.ico" />
+    <title>AHAM INVESTMENTS CO. LTD</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
     />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
       rel="stylesheet"
     />
-    <style>
-      body {
-        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-        color: #ffffff;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        flex-direction: column;
-      }
-
-      .brand {
-        font-size: 3rem;
-        font-weight: bold;
-        color: #ffd700;
-      }
-
-      .subtext {
-        font-size: 1.2rem;
-        margin-top: 1rem;
-      }
-
-      .icons i {
-        font-size: 1.5rem;
-        margin: 0 10px;
-        color: #ffd700;
-        transition: transform 0.2s ease;
-      }
-
-      .icons i:hover {
-        transform: scale(1.2);
-      }
-
-      .footer {
-        position: absolute;
-        bottom: 20px;
-        font-size: 0.9rem;
-        color: #cccccc;
-      }
-    </style>
+    <link rel="stylesheet" href="public/css/landing_page.css" />
   </head>
-  <body>
-    <div class="container">
-      <div class="brand">Aham Investments</div>
-      <p class="display-6 mt-3">Coming Soon</p>
-      <p class="subtext">
-        We're building something great. Stay tuned for updates!
-      </p>
 
-      <div class="icons mt-4">
+  <body>
+    <!-- Loader Section -->
+    <div id="loader">
+      <div class="loader-logo">
+        <img
+          src="./public/assets/aham_investment_co_ltd_logo.webp"
+          alt="AHAM INVESTMENTS CO. LTD"
+        />
+      </div>
+      <div class="loader-progress" id="progress-bar"></div>
+    </div>
+    <!-- Loader Section ends -->
+    <!-- Navbar Start -->
+    <nav
+      id="navbar"
+      class="navbar navbar-expand-lg bg-transparent fixed-top z-3 py-2"
+      style="display: none"
+    >
+      <div class="container-fluid">
         <a
-          href="https://www.instagram.com/p/DKMUMqZi8qt/?igsh=NjkydXp0anUzazJ2MzY="
-          target="_blank"
-          ><i class="fab fa-instagram"></i
-        ></a>
+          class="navbar-brand d-flex align-items-center fw-bold text-dark"
+          href="#"
+        >
+          <img
+            src="public/assets/logo.webp"
+            alt="AHAM INVESTMENTS CO. LTD Logo"
+            width="40"
+            height="40"
+            class="me-2"
+          />
+          AHAM INVESTMENTS CO. LTD
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button
+          class="navbar-toggler text-dark border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Right side: Links -->
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto text-uppercase fw-semibold">
+            <li class="nav-item">
+              <a class="nav-link px-3 text-dark" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3 text-dark" href="#why-us">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3 text-dark" href="/contact_us.html"
+                >Contact Us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-warning fw-bold ms-lg-3" href="workmate.html"
+                >Workmate</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Section Start -->
+    <section class="hero-section position-relative text-light">
+      <!-- Background carousel -->
+      <div
+        id="heroCarousel"
+        class="carousel slide carousel-fade position-absolute top-0 start-0 w-100 h-100"
+        data-bs-ride="carousel"
+        data-bs-interval="5000"
+      >
+        <div class="carousel-inner h-100">
+          <div class="carousel-item active h-100">
+            <img
+              src="public/assets/aham_investment_co_ltd_image_1.webp"
+              class="d-block w-100 h-100 object-fit-cover"
+              alt="Construction"
+            />
+          </div>
+          <div class="carousel-item h-100">
+            <img
+              src="public/assets/aham_investment_co_ltd_image_2.webp"
+              class="d-block w-100 h-100 object-fit-cover"
+              alt="Transportation"
+            />
+          </div>
+          <div class="carousel-item h-100">
+            <img
+              src="public/assets/aham_investment_co_ltd_image_149.webp"
+              class="d-block w-100 h-100 object-fit-cover"
+              alt="Cotton"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Overlay for dimming -->
+      <div
+        class="hero-overlay position-absolute top-0 start-0 w-100 h-100"
+      ></div>
+
+      <!-- Center Text -->
+      <div
+        class="hero-content position-relative z-2 text-center fade-in-element d-flex flex-column justify-content-center align-items-center h-100 px-3"
+      >
+        <h2 class="text-light mb-4 max-width-60rem">
+          Your trusted partner in cotton, transportation, and construction,
+          dedicated to delivering excellence across all sectors.
+        </h2>
+        <h2 class="fw-bold display-4 text-brand-color mb-3 text-uppercase">
+          Genuine Quality is Our Merit
+        </h2>
+        <a href="/contact_us.html" class="btn btn-brand-warning btn-lg fw-bold"
+          >Contact Us</a
+        >
+      </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Services Section -->
+    <section
+      id="services"
+      class="d-flex align-items-center text-dark mt-0 mt-md-5"
+    >
+      <div class="container-fluid px-1 px-md-5">
+        <h2 class="text-center fw-bold mb-5">
+          Our <span class="text-brand-color">Services</span>
+        </h2>
+        <div class="row g-4">
+          <!-- Card 1: Cotton -->
+          <div class="col-md-4">
+            <div
+              class="service-card shadow-lg rounded-3 overflow-hidden h-100 d-flex flex-column"
+            >
+              <img
+                decoding="async"
+                data-lightbox
+                data-caption="Cotton In Field"
+                src="public/assets/aham_investment_co_ltd_image_130.webp"
+                alt="Cotton Service"
+                class="img-fluid w-100 service-img"
+              />
+              <div class="p-4 bg-white d-flex flex-column flex-grow-1">
+                <div>
+                  <!-- <h4 class="fw-bold mb-3 text-dark">Cotton</h4> -->
+                  <p class="text-muted mb-4">
+                    Established in 2004, AHAM INVESTMENTS CO. LTD is committed
+                    to fulfilling the increasing demands for effective cotton
+                    ginning, and the transportation of a wide range of goods and
+                    commodities, catering to both local and international
+                    markets. We specialize in civil and structural engineering,
+                    prioritizing safety and environmental responsibility for
+                    sustainable development.<br /><br />
+                    Our goal is to provide excellence, safety, and
+                    sustainability in all our operations, contributing to the
+                    future of infrastructure while supporting the textile
+                    industry and ensuring exceptional service quality.
+                  </p>
+                </div>
+                <div class="mt-auto text-center">
+                  <a
+                    href="/services/cotton.html"
+                    class="btn btn-brand-warning fw-bold hover-grow px-4"
+                    >Know More - Cotton Ginning and Processing</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Transportation -->
+          <div class="col-md-4">
+            <div
+              class="service-card shadow-lg rounded-3 overflow-hidden h-100 d-flex flex-column"
+            >
+              <img
+                loading="lazy"
+                decoding="async"
+                data-lightbox
+                data-caption="Transportation Crew Members"
+                src="public/assets/aham_investment_co_ltd_image_3.webp"
+                alt="Transportation Service"
+                class="img-fluid w-100 service-img"
+              />
+              <div class="p-4 bg-white d-flex flex-column flex-grow-1">
+                <div>
+                  <!-- <h4 class="fw-bold mb-3 text-dark">Transportation</h4> -->
+                  <p class="text-muted mb-4">
+                    Our key services include: <br />
+                    • Ginning of Raw Cotton to Cotton Lint and Seeds <br />
+                    • Transportation of Goods by Road Within and Neighboring
+                    African Countries <br />
+                    • Importation and Supply of Essential Goods <br />
+                    • Civil and Building Engineering <br /><br />
+                    Dedicated to the expert cultivation and processing of
+                    cotton, we uphold the highest quality benchmarks to maintain
+                    a sustainable supply chain.
+                  </p>
+                </div>
+                <div class="mt-auto text-center">
+                  <a
+                    href="./services/transportation.html"
+                    class="btn btn-brand-warning fw-bold hover-grow px-4"
+                    >Know More About Transportation</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Construction -->
+          <div class="col-md-4">
+            <div
+              class="service-card shadow-lg rounded-3 overflow-hidden h-100 d-flex flex-column"
+            >
+              <img
+                decoding="async"
+                data-lightbox
+                data-caption="Construction Machine"
+                src="public/assets/aham_investment_co_ltd_image_172.webp"
+                alt="Construction Service"
+                class="img-fluid w-100 service-img"
+              />
+              <div class="p-4 bg-white d-flex flex-column flex-grow-1">
+                <div>
+                  <!-- <h4 class="fw-bold mb-3 text-dark">Construction</h4> -->
+                  <p class="text-muted mb-4">
+                    Our extensive construction support and logistics services
+                    are designed to ensure that projects are completed on time
+                    and within budget, while consistently meeting high
+                    standards. Drawing from our extensive knowledge in civil
+                    engineering, we craft innovative approaches for effective
+                    project management.<br /><br />
+                    Our logistics and transportation services are centered on
+                    efficiency, trustworthiness, and personalized attention to
+                    guarantee client satisfaction.
+                  </p>
+                </div>
+                <div class="mt-auto text-center">
+                  <a
+                    href="./services/construction.html"
+                    class="btn btn-brand-warning fw-bold hover-grow px-4"
+                    >Know More About Construction</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section End -->
+
+    <!-- What Sets Us Apart Section -->
+    <section id="why-us" class="py-5 d-flex align-items-center fade-in-element">
+      <div class="container pt-0 pt-md-5 mt-0 mt-md-5">
+        <h2 class="text-center fw-bold mb-5">
+          What <span class="text-brand-color">Sets Us Apart ?</span>
+        </h2>
+
+        <div class="row g-4">
+          <!-- Card 1: WFP Collaboration -->
+          <div class="col-md-6">
+            <div
+              class="card border-0 shadow-lg h-100 p-4 large-card d-flex flex-column align-items-center text-center highlight-card"
+            >
+              <div class="icon-wrapper mb-3 bg-white border">
+                <img
+                  src="public/assets/clients/world_food_program.webp"
+                  alt="World Food Programme"
+                  class="img-fluid rounded"
+                  style="width: 70px; height: 70px; object-fit: contain"
+                />
+              </div>
+              <h5 class="fw-bold">
+                Humanitarian Partnership with World Food Programme (WFP)
+              </h5>
+              <p class="mt-3">
+                We proudly collaborate with the World Food Programme (WFP),
+                contributing to global humanitarian efforts by ensuring reliable
+                logistics and timely food assistance delivery. Our role in this
+                initiative underscores our dedication to social responsibility
+                and our commitment to improving lives through dependable supply
+                chain operations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Resilience During Pandemic -->
+          <div class="col-md-6">
+            <div
+              class="card border-0 shadow-lg h-100 p-4 large-card d-flex flex-column align-items-center text-center highlight-card"
+            >
+              <div
+                class="icon-wrapper h2 text-brand-color mb-3 bg-white border"
+              >
+                <i class="fas fa-hands-helping"></i>
+              </div>
+              <h5 class="fw-bold">Resilient Operations in Challenging Times</h5>
+              <p class="mt-3">
+                During the COVID-19 pandemic, AHAM INVESTMENTS CO. LTD was among
+                the few organizations in the region that remained fully
+                operational. We ensured the uninterrupted supply of essential
+                goods and services, supporting our workers’ livelihoods and
+                maintaining stability for our partners and communities when it
+                was needed most.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Smaller Cards Row -->
+        <div class="row g-4 mt-3">
+          <!-- Card 3: Commitment to Quality -->
+          <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 p-4 text-center">
+              <div class="h2 text-brand-color mb-3">
+                <i class="fas fa-award"></i>
+              </div>
+              <h5 class="fw-bold">Commitment to Quality</h5>
+              <p class="mt-3">
+                At AHAM INVESTMENTS CO. LTD, we believe in delivering quality at
+                every stage of our operations. Our rigorous quality control
+                processes ensure that products and services not only meet but
+                exceed industry standards, providing our clients with peace of
+                mind and confidence in their investment.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4: Expertise -->
+          <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 p-4 text-center">
+              <div class="h2 text-brand-color mb-3">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <h5 class="fw-bold">Unwavering Expertise at Your Service</h5>
+              <p class="mt-3">
+                Our team of experts brings years of experience and specialized
+                knowledge across cotton, mining, transportation, and
+                construction. This expertise allows us to tackle complex
+                challenges efficiently while maintaining a focus on safety and
+                sustainability throughout all our operations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 5: Innovation -->
+          <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 p-4 text-center">
+              <div class="h2 text-brand-color mb-3">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h5 class="fw-bold">Innovative Solutions</h5>
+              <p class="mt-3">
+                We leverage the latest technologies and methodologies to provide
+                innovative solutions tailored to the specific needs of our
+                clients. Our commitment to continuous improvement means we are
+                always evolving, ensuring the highest levels of service and
+                support.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5 ">
+          <a
+            href="./about_us.html"
+            class="btn btn-brand-warning fw-bold px-4 py-2 me-0 me-md-3 mb-2"
+          >
+            Know More About Us
+          </a>
+
+          <a
+            href="public/assets/aham_investments_company_profile_2025.pdf"
+            class="btn btn-brand-warning fw-bold px-4 py-2 mb-2"
+            download
+          >
+            <i class="fas fa-file-download me-2"></i>Download Company Brochure
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- What Sets Us Apart Section End -->
+
+    <!-- Our Valued Clients Section -->
+    <section
+      id="clients"
+      class="text-light fade-in-element d-flex align-items-center"
+    >
+      <div class="container text-center">
+        <h2 class="fw-bold mt-5">
+          Our <span class="text-brand-color">Valued Clients</span>
+        </h2>
+        <h4 class="mb-5 text-secondary">
+          We are proud to collaborate with companies and organizations that
+          trust us to deliver excellence across all sectors.
+        </h4>
+
+        <div class="row g-4 justify-content-center align-items-center mb-5">
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="client-card">
+              <img
+                decoding="async"
+                data-lightbox
+                data-caption="World Food Programme"
+                src="public/assets/clients/world_food_program.webp"
+                alt="World Food Program"
+                class="img-fluid mb-2 client-logo"
+              />
+              <h6 class="fw-semibold">World Food Program</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="client-card">
+              <img
+                decoding="async"
+                data-lightbox
+                src="public/assets/clients/agrocorp.webp"
+                alt="AgroCrop Industries"
+                class="img-fluid mb-2 client-logo"
+              />
+              <h6 class="fw-semibold">AgroCrop Industries</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="client-card">
+              <img
+                decoding="async"
+                data-lightbox
+                src="public/assets/clients/alistair.webp"
+                alt="Alistair Co. Ltd."
+                class="img-fluid mb-2 client-logo"
+              />
+              <h6 class="fw-semibold">Alistair Co. Ltd.</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="client-card">
+              <img
+                decoding="async"
+                data-lightbox
+                src="public/assets/clients/hemed_holdings_limited.webp"
+                alt="Hemed Holdings"
+                class="img-fluid mb-2 client-logo"
+              />
+              <h6 class="fw-semibold">Hemed Holdings</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="client-card">
+              <img
+                decoding="async"
+                data-lightbox
+                src="public/assets/clients/pawani_hauliers_limited.webp"
+                alt="Pawani Hauliers Ltd."
+                class="img-fluid mb-2 client-logo"
+              />
+              <h6 class="fw-semibold">Pawani Hauliers Ltd.</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="client-card">
+              <img
+                decoding="async"
+                data-lightbox
+                src="public/assets/clients/sogea_satom.webp"
+                alt="SOGEA SATOM"
+                class="img-fluid mb-2 client-logo"
+              />
+              <h6 class="fw-semibold">SOGEA SATOM</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="client-card">
+              <img
+                decoding="async"
+                data-lightbox
+                src="public/assets/clients/taifa.webp"
+                alt="Taifa"
+                class="img-fluid mb-2 client-logo"
+              />
+              <h6 class="fw-semibold">Taifa</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="client-card">
+              <img
+                decoding="async"
+                data-lightbox
+                src="public/assets/clients/textiles_joc.webp"
+                alt="JOC Textiles"
+                class="img-fluid mb-2 client-logo"
+              />
+              <h6 class="fw-semibold">JOC Textiles</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="client-card">
+              <img
+                decoding="async"
+                data-lightbox
+                src="public/assets/clients/afcom.webp"
+                alt="Afcom"
+                class="img-fluid mb-2 client-logo"
+              />
+              <h6 class="fw-semibold">Afcom</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="client-card">
+              <img
+                decoding="async"
+                data-lightbox
+                src="public/assets/clients/azan_logistics.webp"
+                alt="Azan Logistics"
+                class="img-fluid mb-2 client-logo"
+              />
+              <h6 class="fw-semibold">Azan Logistics</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="client-card">
+              <img
+                decoding="async"
+                data-lightbox
+                src="public/assets/clients/faircot.webp"
+                alt="Faircot"
+                class="img-fluid mb-2 client-logo"
+              />
+              <h6 class="fw-semibold">Faircot</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="client-card">
+              <img
+                decoding="async"
+                data-lightbox
+                src="public/assets/clients/fresho_group.webp"
+                alt="Fresho Group"
+                class="img-fluid mb-2 client-logo"
+              />
+              <h6 class="fw-semibold">Fresho Group</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="client-card">
+              <img
+                decoding="async"
+                data-lightbox
+                src="public/assets/clients/furaha.webp"
+                alt="Furaha"
+                class="img-fluid mb-2 client-logo"
+              />
+              <h6 class="fw-semibold">Furaha</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="client-card">
+              <img
+                decoding="async"
+                data-lightbox
+                src="public/assets/clients/jambo.webp"
+                alt="Jambo"
+                class="img-fluid mb-2 client-logo"
+              />
+              <h6 class="fw-semibold">Jambo</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="client-card">
+              <img
+                decoding="async"
+                data-lightbox
+                src="public/assets/clients/nyakahara_investment_ltd.webp"
+                alt="Nyakahara Investment Ltd"
+                class="img-fluid mb-2 client-logo"
+              />
+              <h6 class="fw-semibold">Nyakahara Investment Ltd</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="client-card">
+              <img
+                decoding="async"
+                data-lightbox
+                src="public/assets/clients/storm_safaris.webp"
+                alt="Storm Safaris"
+                class="img-fluid mb-2 client-logo"
+              />
+              <h6 class="fw-semibold">Storm Safaris</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Our Valued Clients Section End -->
+
+    <!-- Video Section -->
+    <section class="video-section position-relative">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        id="promoVideo"
+        class="w-100 h-100 object-fit-cover"
+      >
+        <source
+          src="public/assets/aham_investment_co_ltd_lanscape_video.MP4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Overlay with animation class -->
+      <div
+        class="video-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center fade-in-element"
+      >
+        <h2 class="display-4 fw-bold text-brand-color mb-3">
+          Powering Growth Across Sectors
+        </h2>
+        <h2 class="display-6 text-light mb-0">
+          Construction • Transportation • Cotton
+        </h2>
+      </div>
+
+      <!-- Optional gradient fade bottom -->
+      <div
+        class="video-gradient position-absolute bottom-0 start-0 w-100"
+      ></div>
+    </section>
+    <!-- Video Section End -->
+
+    <!-- Global Reach Section -->
+    <section
+      id="global-reach"
+      class="position-relative text-center text-light fade-in-element"
+    >
+      <div class="global-bg position-absolute top-0 start-0 w-100 h-100"></div>
+      <div class="container position-relative py-5">
+        <h2 class="fw-bold mb-3">
+          Our <span class="text-brand-color">Global Reach</span>
+        </h2>
+        <h2 class="lead mb-4">
+          Connecting industries and partners across continents through trust,
+          quality, and innovation.
+        </h2>
+        <button
+          class="btn btn-brand-warning fw-bold px-4 py-2"
+          data-bs-toggle="modal"
+          data-bs-target="#globalMapModal"
+        >
+          View Map
+        </button>
+      </div>
+    </section>
+
+    <!-- Global Map Modal -->
+    <div
+      class="modal fade"
+      id="globalMapModal"
+      tabindex="-1"
+      aria-labelledby="globalMapModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content bg-dark border-0">
+          <div class="modal-header border-0">
+            <h5
+              class="modal-title text-brand-color fw-bold"
+              id="globalMapModalLabel"
+            >
+              Global Footprint
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <div class="map-container overflow-auto">
+              <img
+                src="public/assets/global_reach.png"
+                alt="AHAM INVESTMENTS CO. LTD Global Map"
+                class="img-fluid map-image"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <!-- Global Reach Section End-->
 
-    <div class="footer">&copy; 2025 Aham Investments. All rights reserved.</div>
+    <!-- Footer Section -->
+    <footer class="footer bg-dark text-light pt-5">
+      <div class="container">
+        <div class="row gy-4">
+          <!-- Company Info -->
+          <div class="col-md-4">
+            <div class="d-flex align-items-center mb-3">
+              <img
+                src="public/assets/logo.webp"
+                alt="AHAM INVESTMENTS CO. LTD Logo"
+                width="45"
+                height="45"
+                class="me-2"
+              />
+              <h5 class="fw-bold text-brand-color mb-0">
+                AHAM INVESTMENTS CO. LTD
+              </h5>
+            </div>
+            <p class="fst-italic mb-3">"Genuine quality is our Merit"</p>
+            <p class="small mb-1">
+              <i class="fas fa-map-marker-alt me-2 text-brand-color"></i> AHAM
+              INVESTMENTS CO. LTD. HQ, <br />
+              Mhumbu Industial Area, Shinyanga
+            </p>
+            <p class="small mb-1">
+              <i class="fas fa-envelope me-2 text-brand-color"></i>
+              ahamcotton@gmail.com, ameir@myself.com
+            </p>
+            <p class="small mb-3">
+              <i class="fas fa-phone-alt me-2 text-brand-color"></i> +255 767
+              100 009 , +255 745 100 009
+            </p>
+            <a
+              href="/contact_us.html"
+              class="btn btn-brand-warning fw-bold btn-sm"
+              >Contact Us</a
+            >
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-5">
+            <h6 class="text-uppercase text-brand-color fw-bold mb-3">
+              Quick Links
+            </h6>
+            <div class="row">
+              <div class="col-6">
+                <ul class="list-unstyled small">
+                  <li>
+                    <a href="/contact_us.html" class="footer-link"
+                      >Contact Us</a
+                    >
+                  </li>
+                  <li>
+                    <a href="about_us.html" class="footer-link">About Us</a>
+                  </li>
+                  <li>
+                    <a href="services/cotton.html" class="footer-link"
+                      >Cotton Production</a
+                    >
+                  </li>
+                  <li>
+                    <a href="services/transportation.html" class="footer-link"
+                      >Transportation</a
+                    >
+                  </li>
+                  <li>
+                    <a href="services/construction.html" class="footer-link"
+                      >Constructions</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul class="list-unstyled small">
+                  <li>
+                    <a href="privacy_policy.html" class="footer-link"
+                      >Privacy Policy</a
+                    >
+                  </li>
+                  <li>
+                    <a href="terms_of_use.html" class="footer-link"
+                      >Terms of Use</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="workmate.html"
+                      class="footer-link fw-bold text-brand-color"
+                    >
+                      Workmate <i class="fas fa-briefcase ms-1"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="col-md-3">
+            <h6 class="text-uppercase text-brand-color fw-bold mb-3">
+              Connect With Us
+            </h6>
+            <div class="d-flex gap-3 mb-3">
+              <a
+                href="https://www.instagram.com/p/DKMUMqZi8qt/?igsh=NjkydXp0anUzazJ2MzY="
+                class="social-link"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://api.whatsapp.com/send?phone=+255767100009"
+                class="social-link"
+                target="_blank"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a href="mailto:ahamcotton@gmail.com" class="social-link"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+            <p class="small text-secondary">
+              Stay connected for updates on our latest projects and initiatives.
+            </p>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="border-secondary my-4" />
+
+        <!-- Copyright -->
+        <div class="text-center small text-secondary pb-3">
+          &copy; <span id="year"></span> AHAM INVESTMENTS CO. LTD All rights
+          reserved.
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <button class="lightbox-nav prev" aria-label="Previous image">
+        &#10094;
+      </button>
+      <img class="lightbox-img" alt="" />
+      <button class="lightbox-nav next" aria-label="Next image">
+        &#10095;
+      </button>
+      <div class="lightbox-caption"></div>
+      <span class="lightbox-close">&times;</span>
+    </div>
+    <!-- Lightbox End -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="public/js/main.js"></script>
+    <script src="public/js/landing_page.js"></script>
   </body>
 </html>

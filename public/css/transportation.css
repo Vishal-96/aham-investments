@@ -1,0 +1,429 @@
+@import url("theme.css");
+
+/* ---------- Hero Header Section ---------- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url("../assets/aham_investment_co_ltd_image_124.webp")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(4, 57, 39, 0.85) 0%,
+    rgba(6, 70, 53, 0.7) 45%,
+    rgba(8, 95, 60, 0.55) 100%
+  );
+  z-index: 1;
+}
+
+.hero-section .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+  animation: fadeInOverlay 1.8s ease-in-out;
+}
+
+.hero-section h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+}
+
+.hero-section p {
+  color: var(--color-text-light-muted);
+  font-size: 1.1rem;
+  margin-top: 0.75rem;
+}
+
+.hero-section .hero-content h1 {
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section h4 {
+  color: var(--color-text-light-muted);
+  font-weight: 400;
+  margin-bottom: 1.8rem;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+}
+
+.hero-section .btn-brand-warning {
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(126, 200, 80, 0.3);
+  transition: all 0.4s ease;
+}
+
+.hero-section .btn-brand-warning:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(126, 200, 80, 0.6);
+}
+
+@import url("theme.css");
+
+/* ---------- Transportation Section ---------- */
+.transport-section {
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+  min-height: 100vh;
+}
+
+.transport-section h2 {
+  font-size: 1.8rem;
+  color: var(--color-text-dark);
+}
+
+.transport-section p {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.transport-section img {
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.transport-section img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Transport Strengths (dark cards) ---------- */
+.transport-strengths {
+  background: radial-gradient(
+      circle at top,
+      rgba(126, 200, 80, 0.08),
+      transparent 60%
+    ),
+    var(--color-bg-dark-alt);
+  color: var(--color-text-light);
+  min-height: 80vh;
+}
+
+.transport-strengths h2 {
+  color: var(--color-brand-primary);
+}
+.transport-strengths p {
+  font-size: 1.2rem;
+}
+
+.transport-strengths .text-light-muted {
+  color: var(--color-text-light-muted);
+}
+
+.transport-strength-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  padding: 1.5rem 1.4rem;
+  border: 1px solid var(--color-border-dark);
+  box-shadow: var(--shadow-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease, background 0.25s ease;
+}
+
+.transport-strength-card p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--color-text-light-muted);
+}
+
+.transport-strength-card strong {
+  color: var(--color-brand-primary);
+  font-weight: 600;
+}
+
+.transport-strength-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(126, 200, 80, 0.5);
+}
+
+/* icon bubble */
+.strength-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(126, 200, 80, 0.12);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.strength-icon i {
+  font-size: 1.1rem;
+  color: var(--color-brand-primary);
+}
+
+/* ---------- Vehicle Hire Section ---------- */
+/* ---------- Vehicle Hire Section ---------- */
+.vehicle-hire-section {
+  background: var(--color-bg-light);
+  overflow-x: hidden; /* prevent horizontal scroll on mobile */
+}
+
+/* Desktop layout */
+.vehicle-hire-section .container {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+}
+
+.vehicle-hire-section h2 {
+  font-size: 2rem;
+}
+
+.vehicle-hire-section p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ---------- Carousel Wrapper ---------- */
+.vehicle-carousel {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  padding: 2rem 3rem;
+  width: 100%;
+}
+
+/* Track */
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+/* ---------- Vehicle Card (UNIFORM) ---------- */
+.vehicle-card {
+  min-width: 100%;
+  height: 520px; /* desktop fixed height */
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.vehicle-card.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ---------- Image Area (Top 60%) ---------- */
+.vehicle-image {
+  height: 60%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.vehicle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ---------- Content Area (Bottom 40%) ---------- */
+.vehicle-content {
+  height: 40%;
+  padding: 1.2rem 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+/* Title */
+.vehicle-content h5 {
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+/* Description */
+.vehicle-content p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 90%;
+}
+
+/* Hire button */
+.btn-hire {
+  font-size: 1rem;
+  padding: 0.65rem 1.8rem;
+  border-radius: 30px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Carousel Navigation ---------- */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(126, 200, 80, 0.15);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.carousel-nav i {
+  color: var(--color-brand-primary);
+  font-size: 1.1rem;
+}
+
+.carousel-nav.prev {
+  left: 14px;
+}
+
+.carousel-nav.next {
+  right: 14px;
+}
+
+/* ---------- Responsive Fixes ---------- */
+@media (max-width: 991.98px) {
+  /* IMPORTANT: remove flex lock */
+  .vehicle-hire-section .container {
+    min-height: auto;
+    display: block;
+  }
+
+  .vehicle-carousel {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .vehicle-card {
+    height: 420px;
+  }
+
+  .vehicle-image {
+    height: 55%;
+  }
+
+  .vehicle-content {
+    height: 45%;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 576px) {
+  .vehicle-card {
+    height: 380px;
+  }
+
+  .btn-hire {
+    font-size: 0.95rem;
+    padding: 0.55rem 1.5rem;
+  }
+}
+
+/* ---------- Final CTA band ---------- */
+.transport-cta-section {
+  position: relative;
+  background: url("../assets/aham_investment_co_ltd_image_2.webp") center/cover
+    no-repeat;
+  color: var(--color-text-light);
+  overflow: hidden;
+  min-height: 50vh;
+}
+
+.transport-cta-section .cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    140deg,
+    rgba(4, 57, 39, 0.85),
+    rgba(6, 70, 53, 0.75),
+    rgba(0, 0, 0, 0.55)
+  );
+  z-index: 1;
+}
+
+.transport-cta-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.transport-cta-section p {
+  color: var(--color-text-light-muted);
+  line-height: 1.7;
+  font-size: 1.2rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991.98px) {
+  .transport-section {
+    padding: 3rem 1rem;
+  }
+
+  .transport-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .transport-section p {
+    font-size: 0.95rem;
+  }
+
+  .transport-section img {
+    margin-top: 1.5rem;
+  }
+
+  .hero-section {
+    height: 100vh;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+  .transport-strength-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .strength-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .transport-cta-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .transport-cta-section p {
+    font-size: 0.95rem;
+  }
+}
