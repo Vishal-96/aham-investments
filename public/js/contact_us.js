@@ -1,8 +1,44 @@
+const FORM_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbz4v2Ug5vu7q2LzvBVDuptsfuhZ9e6F3YWiYn6u_wkSNpP1sgjBLVkFw6KxQM2EgXn5/exec";
+
+const sendMessage = async (payload) => {
+  try {
+    const res = await fetch(FORM_ENDPOINT, {
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      }
+    });
+    showResult(true);
+  } catch (err) {
+    console.log("Error: ", err);
+    showResult(false);
+  }
+};
+
+function showResult(success) {
+  const resultBox = document.getElementById("formResult");
+  const resultText = document.getElementById("resultText");
+  const resultIcon = document.getElementById("resultIcon");
+  resultBox.classList.remove("d-none");
+
+  if (success) {
+    resultIcon.innerHTML = `<i class="fas fa-envelope-open-text"></i>`;
+    resultIcon.className = "result-icon result-success mb-3";
+    resultText.textContent =
+      "Message is sent. Thank you for connecting with AHAM.";
+  } else {
+    resultIcon.innerHTML = `<i class="fas fa-exclamation-triangle"></i>`;
+    resultIcon.className = "result-icon result-error mb-3";
+    resultText.textContent = "Something went wrong. Please try again later.";
+  }
+}
+
 (function () {
   const form = document.getElementById("contactFormPage");
-  const alertBox = document.getElementById("contactAlert");
-  const spinner = document.getElementById("contactSpinner");
   const submitBtn = document.getElementById("contactSubmit");
+  const overlay = document.getElementById("formOverlay");
 
   const params = new URLSearchParams(window.location.search);
   const vehicle = params.get("vehicle");
@@ -13,36 +49,27 @@
     messageField.focus();
   }
 
-  form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", async function (e) {
     e.preventDefault();
     e.stopPropagation();
-
     if (!form.checkValidity()) {
       form.classList.add("was-validated");
       return;
     }
-
+    const payload = {
+      name: document.getElementById("c_name").value,
+      email: document.getElementById("c_email").value,
+      phone: document.getElementById("c_phone").value,
+      message: document.getElementById("c_message").value,
+      address: document.getElementById("c_address").value,
+    };
+    overlay.classList.remove("d-none");
+    submitBtn.setAttribute("disabled", true);
+    await sendMessage(payload);
     form.reset();
-    return alert("Message validated!, Not sent as its a test server.");
-    spinner.classList.remove("d-none");
-    submitBtn.setAttribute("disabled", "disabled");
-
-    setTimeout(() => {
-      spinner.classList.add("d-none");
-      submitBtn.removeAttribute("disabled");
-
-      alertBox.className = "alert alert-success mt-3";
-      alertBox.innerHTML =
-        "<strong>Thanks!</strong> Your message has been received. We will contact you shortly.";
-      alertBox.classList.remove("d-none");
-
-      form.reset();
-      form.classList.remove("was-validated");
-
-      setTimeout(() => {
-        alertBox.classList.add("d-none");
-      }, 6000);
-    }, 1200);
+    form.classList.remove("was-validated");
+    submitBtn.setAttribute("disabled", false);
+    overlay.classList.add("d-none");
   });
 
   form.addEventListener(
