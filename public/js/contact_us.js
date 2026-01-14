@@ -1,5 +1,5 @@
 const FORM_ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbz4v2Ug5vu7q2LzvBVDuptsfuhZ9e6F3YWiYn6u_wkSNpP1sgjBLVkFw6KxQM2EgXn5/exec";
+  "https://script.google.com/macros/s/AKfycbwTLSVt2AFW5MSNEJzmM7NWG2ZwKcClcrcEYuWK2bDprkQcCi60EkDXq0M4pMl61XQe/exec";
 
 const sendMessage = async (payload) => {
   try {
