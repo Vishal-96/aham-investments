@@ -92,6 +92,68 @@
   transform: translateY(-2px);
 }
 
+.form-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-bg-light);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.overlay-content {
+  text-align: center;
+  color: var(--color-text-dark);
+}
+
+.form-result {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+}
+
+.result-card {
+  background: var(--color-bg-light);
+  border-radius: 14px;
+  padding: 2rem 2.2rem;
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeUp 0.4s ease;
+}
+
+.result-icon {
+  font-size: 2.4rem;
+}
+
+.result-success {
+  color: var(--color-brand-primary);
+}
+
+.result-error {
+  color: var(--color-text-red);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 /* ---------- Company Info (Right Column) ---------- */
 .contact-right .logo {
   width: 58px;

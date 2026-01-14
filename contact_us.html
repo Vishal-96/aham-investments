@@ -58,18 +58,24 @@
                 >Cotton Production</a
               >
             </li>
-           <li class="nav-item">
-              <a class="nav-link px-3 text-dark" href="services/transportation.html"
+            <li class="nav-item">
+              <a
+                class="nav-link px-3 text-dark"
+                href="services/transportation.html"
                 >Transportation</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link px-3 text-dark" href="services/construction.html"
+              <a
+                class="nav-link px-3 text-dark"
+                href="services/construction.html"
                 >Construction</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link px-3 text-dark" href="about_us.html">About Us</a>
+              <a class="nav-link px-3 text-dark" href="about_us.html"
+                >About Us</a
+              >
             </li>
           </ul>
         </div>
@@ -102,7 +108,7 @@
             WhatsApp.
           </p>
 
-          <form id="contactFormPage" novalidate>
+          <form id="contactFormPage" novalidate class="position-relative">
             <div class="row g-3">
               <div class="col-12">
                 <label for="c_name" class="form-label small">Full name</label>
@@ -161,9 +167,9 @@
               </div>
 
               <div class="col-12">
-                <label for="c_message" class="form-label small"
-                  >Your message / Query</label
-                >
+                <label for="c_message" class="form-label small">
+                  Your message / Query
+                </label>
                 <textarea
                   id="c_message"
                   name="message"
@@ -177,7 +183,7 @@
                 </div>
               </div>
 
-              <div class="col-12 d-flex align-items-center gap-3">
+              <div class="col-12 d-flex gap-3">
                 <button
                   id="contactSubmit"
                   type="submit"
@@ -186,23 +192,28 @@
                   Send Message
                 </button>
                 <button type="reset" class="btn btn-outline-secondary">
-                  Reset
+                  Clear Form
                 </button>
+              </div>
+            </div>
+
+            <div id="formOverlay" class="form-overlay d-none">
+              <div class="overlay-content">
                 <div
-                  id="contactSpinner"
-                  class="spinner-border spinner-border-sm text-brand-color d-none"
+                  class="spinner-border text-brand-color mb-3"
                   role="status"
                   aria-hidden="true"
                 ></div>
+                <p class="mb-0 fw-semibold">
+                  Please wait, sending your message…
+                </p>
               </div>
+            </div>
 
-              <div class="col-12">
-                <div
-                  id="contactAlert"
-                  class="alert d-none mt-3"
-                  role="alert"
-                  aria-live="polite"
-                ></div>
+            <div id="formResult" class="form-result d-none">
+              <div class="result-card">
+                <div id="resultIcon" class="result-icon mb-3"><i class="fas fa-envelope-open-text"></i></div>
+                <p id="resultText" class="mb-0 fw-semibold"></p>
               </div>
             </div>
           </form>
@@ -382,10 +393,21 @@
               </div>
               <div class="col-6">
                 <ul class="list-unstyled small">
-                  <li><a href="privacy_policy.html" class="footer-link">Privacy Policy</a></li>
-                  <li><a href="terms_of_use.html" class="footer-link">Terms of Use</a></li>
                   <li>
-                    <a href="workmate.html" class="footer-link fw-bold text-brand-color">
+                    <a href="privacy_policy.html" class="footer-link"
+                      >Privacy Policy</a
+                    >
+                  </li>
+                  <li>
+                    <a href="terms_of_use.html" class="footer-link"
+                      >Terms of Use</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="workmate.html"
+                      class="footer-link fw-bold text-brand-color"
+                    >
                       Workmate <i class="fas fa-briefcase ms-1"></i>
                     </a>
                   </li>
