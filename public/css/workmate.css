@@ -1,12 +1,11 @@
 /* =========================================
-   🌟 Root Variables - Color System
+   === BRAND COLORS (Workmate Theme) ===
 ========================================= */
 :root {
-  /* === BRAND COLORS === */
-  --color-brand-primary: #ffc107;
-  --color-brand-primary-light: #ffca2c;
-  --color-brand-dark: #0d0d0d;
-  --color-brand-dark-alt: #111;
+  --color-brand-primary: #f5c400; /* Construction Yellow */
+  --color-brand-primary-light: #ffd633; /* Hover yellow */
+  --color-brand-dark: #121212; /* Deep black */
+  --color-brand-dark-alt: #1e1e1e; /* Charcoal */
 
   /* === NEUTRALS / BASE === */
   --color-bg-light: #f8f9fa;
@@ -19,24 +18,536 @@
   --color-text-dark: #212529;
   --color-text-light: #f8f9fa;
   --color-text-muted: #6c757d;
-  --color-text-light-muted: #d1d1d1;
+  --color-text-light-muted: #bdbdbd;
+  --color-text-red: #dc3545;
 
   /* === BORDERS & SHADOWS === */
   --color-border-light: rgba(0, 0, 0, 0.1);
   --color-border-dark: rgba(255, 255, 255, 0.1);
   --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
-  --shadow-dark: 0 8px 25px rgba(255, 255, 255, 0.08);
+  --shadow-dark: 0 8px 25px rgba(0, 0, 0, 0.4);
 
   /* === OVERLAYS & EFFECTS === */
-  --overlay-dark: rgba(0, 0, 0, 0.45);
-  --overlay-light: rgba(255, 255, 255, 0.1);
+  --overlay-dark: rgba(0, 0, 0, 0.65);
+  --overlay-light: rgba(255, 255, 255, 0.08);
   --highlight-gradient: linear-gradient(
     145deg,
-    rgba(255, 193, 7, 0.15),
-    rgba(255, 193, 7, 0.05)
+    rgba(245, 196, 0, 0.2),
+    rgba(245, 196, 0, 0.05)
   );
 
   /* === TYPOGRAPHY === */
-  --font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
-    Arial;
+  --font-family-base:
+    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+/* =========================================
+   GLOBAL
+========================================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background: var(--color-bg-dark);
+}
+
+img {
+  content-visibility: auto;
+  cursor: pointer;
+}
+
+.max-width-65rem {
+  max-width: 65rem;
+}
+
+/* Button (reuse AHAM naming logic) */
+.btn-brand-warning {
+  background: var(--color-brand-primary);
+  color: var(--color-brand-dark);
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-brand-warning:hover {
+  background: var(--color-brand-primary-light);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   NAVBAR (Same system as AHAM)
+========================================= */
+.navbar {
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  color: var(--color-text-light) !important;
+  font-weight: 700;
+  margin-left: 2%;
+}
+.nav-link {
+  color: var(--color-text-light-muted) !important;
+  transition: 0.3s ease;
+}
+.nav-link:hover {
+  color: var(--color-brand-primary) !important;
+}
+.navbar-brand img {
+  border-radius: 6px;
+  height: 70px;
+  width: 70px;
+}
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar-toggler-icon {
+  filter: invert(1) !important;
+}
+
+/* Navbar Responsive */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: var(--color-bg-dark);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+  }
+  .navbar-collapse .nav-link {
+    color: var(--color-text-light) !important;
+  }
+  .navbar-collapse .btn-warning {
+    margin-top: 0.5rem;
+  }
+  .navbar-brand {
+    font-size: 1rem;
+    margin-left: 0;
+  }
+  .navbar-brand img {
+    height: 30px;
+    width: 30px;
+  }
+  .navbar,
+  .navbar .nav-link {
+    font-size: 0.8rem;
+  }
+}
+
+/* =========================================
+   HERO SECTION (Same naming pattern)
+========================================= */
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay */
+.hero-section .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-dark);
+  z-index: 1;
+}
+
+.hero-section .carousel-inner img {
+  object-fit: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Headings */
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--color-brand-primary);
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* Accent text */
+.text-brand-color {
+  color: var(--color-brand-primary);
+}
+
+/* Paragraph */
+.hero-content p {
+  color: var(--color-text-light-muted);
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto 1.8rem;
+  line-height: 1.7;
+}
+
+/* Buttons spacing */
+.hero-content .btn {
+  margin: 0.4rem;
+}
+
+@media (max-width: 768px) {
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+  .hero-content p {
+    font-size: 0.8rem;
+  }
+}
+
+/* ---------- Workmate About Section (Dark) ---------- */
+.workmate-about-section {
+  background:
+    radial-gradient(circle at top, rgba(255, 193, 7, 0.08), transparent 60%),
+    var(--color-bg-dark-alt);
+  min-height: 100vh;
+  color: var(--color-text-light);
+}
+
+/* Block container */
+.about-block {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Header with icon */
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.about-header i {
+  font-size: 1.4rem;
+  color: var(--color-brand-primary);
+}
+
+.about-header h3 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Text */
+.workmate-about-section p {
+  color: var(--color-text-light-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
+.workmate-about-section strong {
+  color: var(--color-brand-primary);
+  font-weight: 600;
+}
+
+/* Image */
+.about-image {
+  margin-top: auto; /* pushes image to bottom */
+  margin-top: 1.5rem;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-dark);
+}
+
+.about-image img {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991.98px) {
+  .workmate-about-section {
+    padding: 3rem 1rem;
+  }
+
+  .workmate-about-section p {
+    font-size: 0.95rem;
+  }
+
+  .about-image img {
+    height: 200px;
+  }
+}
+
+/* =========================================
+   SERVICES SECTION (LIGHT)
+========================================= */
+.services-section {
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+  min-height: 100vh;
+}
+
+/* Card */
+.service-card {
+  background: var(--color-bg-card-light);
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-light);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon */
+.service-icon {
+  font-size: 2.2rem;
+  color: var(--color-brand-primary);
+}
+
+/* Text */
+.service-card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   SERVICES IMAGE GALLERY
+========================================= */
+.services-gallery {
+  margin-top: 3rem;
+}
+
+/* Images */
+.service-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.service-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   PROJECTS SECTION
+========================================= */
+.projects-section {
+  background: var(--color-bg-dark-alt);
+  color: var(--color-text-light);
+}
+
+.projects-section h5 {
+  font-size: 1.25rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-brand-primary);
+}
+
+.projects-section p {
+  color: var(--color-text-light);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Image styling */
+.projects-section img {
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.projects-section img:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-light);
+}
+
+/* Spacing tuning */
+.projects-section .row {
+  margin-bottom: 2.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-section h5 {
+    font-size: 1.1rem;
+  }
+
+  .projects-section img {
+    margin-top: 1rem;
+  }
+}
+
+/* =========================================
+   CLIENTELE SECTION (LIGHT)
+========================================= */
+.clients-section {
+  background: var(--color-bg-light);
+}
+
+/* Card */
+.client-card {
+  background: var(--color-bg-card-light);
+  border-radius: 14px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon */
+.client-icon {
+  font-size: 2rem;
+  color: var(--color-brand-primary);
+  margin-bottom: 0.7rem;
+}
+
+/* Text */
+.client-card h6 {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+}
+
+/* Future image support */
+.client-card img {
+  max-height: 60px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+.footer {
+  background: var(--color-bg-dark-alt);
+  color: var(--color-text-light);
+}
+
+.footer p {
+  margin-bottom: 0.4rem;
+  color: var(--color-text-light-muted);
+}
+
+.footer h5 {
+  letter-spacing: 0.5px;
+}
+
+.footer hr {
+  opacity: 0.2;
+}
+
+/* =========================================
+   RESPONSIVE (same pattern as AHAM)
+========================================= */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ---------- CTA Section ---------- */
+.workmate-cta-section {
+  position: relative;
+  min-height: 70vh;
+  background: url("public/assets/workmate_network_limited_20.webp") center/cover no-repeat;
+  color: var(--color-text-light);
+  overflow: hidden;
+}
+
+.workmate-cta-section .cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    140deg,
+    rgba(20, 20, 20, 0.88),
+    rgba(40, 40, 40, 0.82),
+    rgba(0, 0, 0, 0.75)
+  );
+  z-index: 1;
+}
+
+.workmate-cta-section .container {
+  z-index: 2;
+}
+
+.workmate-cta-section p {
+  color: var(--color-text-light-muted);
+}
+
+/* ---------- CTA Gallery ---------- */
+.cta-gallery {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+/* Media items */
+.cta-gallery img,
+.cta-gallery video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.cta-gallery img:hover,
+.cta-gallery video:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991.98px) {
+  .cta-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  }
+
+  .cta-gallery img,
+  .cta-gallery video {
+    height: 90px;
+  }
 }
