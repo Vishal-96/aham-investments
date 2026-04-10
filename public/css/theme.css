@@ -35,8 +35,8 @@
   );
 
   /* === TYPOGRAPHY === */
-  --font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
-    Arial;
+  --font-family-base:
+    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
 }
 
 /* =========================================
@@ -78,12 +78,10 @@ img {
   height: 70px;
   width: 70px;
 }
-
 .navbar.bg-transparent {
   background-color: transparent !important;
   transition: background-color 0.4s ease;
 }
-
 .navbar-light .navbar-nav .nav-link {
   color: var(--color-text-dark);
   transition: color 0.3s ease;
@@ -91,7 +89,6 @@ img {
 .navbar-light .navbar-nav .nav-link:hover {
   color: var(--color-brand-primary);
 }
-
 .navbar,
 .navbar .nav-link {
   color: var(--color-text-light) !important;
@@ -103,6 +100,9 @@ img {
 }
 .navbar-toggler {
   border-color: rgba(255, 255, 255, 0.12);
+}
+.navbar-toggler:focus {
+  box-shadow: none;
 }
 .navbar-toggler-icon {
   filter: invert(1) !important;
@@ -142,7 +142,9 @@ img {
 .fade-in-element {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 1.5s ease, transform 1.5s ease;
+  transition:
+    opacity 1.5s ease,
+    transform 1.5s ease;
 }
 .fade-in-visible {
   opacity: 1;
@@ -166,7 +168,9 @@ img {
 .social-link {
   font-size: 1.3rem;
   color: var(--color-text-light-muted);
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease;
 }
 .social-link:hover {
   color: var(--color-brand-primary);
@@ -247,7 +251,9 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
 }
 
 .lightbox-nav:hover {
